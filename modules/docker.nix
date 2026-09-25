@@ -6,8 +6,6 @@ with lib;
   config = {
   
   
-    users.users.nixos.extraGroups = [ "docker" ];
-
     virtualisation.docker = {
       enable = true;
       rootless.enable = true;

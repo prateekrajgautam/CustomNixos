@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, offlineCalamares, ... }:
 
 let
   brand = builtins.fromJSON (builtins.readFile ../branding/branding.json);
@@ -8,7 +8,7 @@ let
     genericName = "System Installer";
     comment = "Install ${brand.name} — ${brand.tagline}";
     icon = brand.installerIcon;
-    exec = "pkexec ${pkgs.calamares-nixos}/bin/calamares";
+    exec = "pkexec ${offlineCalamares}";
     terminal = false;
     categories = [ "System" ];
   };

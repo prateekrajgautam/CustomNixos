@@ -7,6 +7,18 @@ This directory builds two NixOS 26.05 Cinnamon live images:
 
 Both configurations use the NixOS-aware Calamares integration rather than the generic Calamares package. They include a live-only `nixos` user, Cinnamon automatic login, passwordless live administration, Polkit installer elevation, and an **Install Testing** desktop shortcut.
 
+## Offline installation guarantee
+
+Both editions are configured for installation with networking disconnected:
+
+* Calamares does not check for or require internet connectivity.
+* The installer offers the supported **Cinnamon desktop** and **Basic system** targets only.
+* Complete BIOS and UEFI Cinnamon target closures are retained in each ISO; the Basic target is a subset of those closures.
+* Calamares runs with an empty Nix substituter list. Missing store paths therefore fail locally instead of being downloaded.
+* The selected edition profile is copied to `/etc/nixos/offline-profile.nix`. Full also copies its referenced modules to `/etc/modules`, so later `nixos-rebuild` evaluations remain valid.
+
+The embedded target closures increase image size. Do not remove `modules/offline-installer.nix` or replace it with only `channel.nix`: a channel contains Nix expressions, not the complete package closure needed for an offline installation.
+
 ## Build from WSL
 
 Run from this directory inside WSL:
@@ -50,9 +62,10 @@ Before release, test each image in a disposable VM with networking disconnected:
 1. Boot in UEFI mode and reach the branded Cinnamon desktop automatically.
 2. Confirm wallpaper/theme and the **Install Testing** shortcut.
 3. Launch Calamares and GParted from the live user.
-4. Complete an installation to an empty virtual disk without networking.
-5. Reboot from the virtual disk and verify the intended installed profile.
-6. Repeat the boot test in legacy BIOS mode.
+4. Disable the VM network adapter before launching Calamares.
+5. Complete both **Basic system** and **Cinnamon desktop** installations to an empty virtual disk without networking.
+6. Reboot from the virtual disk and verify the intended installed profile.
+7. Repeat the boot test in legacy BIOS mode.
 
 The Full build currently includes both VS Code and VSCodium. Nix completes the image but reports many file collisions between them. Choose one editor when the package profiles are split.
 

@@ -9,6 +9,7 @@ in
     ./modules/cinnamon-desktop.nix
     ./modules/default-user.nix
     ./modules/live-installer.nix
+    ./modules/offline-installer.nix
     ./modules/testing-branding.nix
     ./modules/sane-extra-config.nix
     # Provide an initial copy of the NixOS channel so that the user
@@ -17,6 +18,8 @@ in
   ];
 
   _module.args.edition = "Minimal";
+  _module.args.installedProfile = ./config-templates/installed-minimal.nix;
+  _module.args.installedModuleFiles = [ ];
 
   image.fileName = lib.mkForce "${brand.id}-minimal-${config.system.nixos.label}-${pkgs.stdenv.hostPlatform.system}.iso";
   boot.zfs.forceImportRoot = false;
