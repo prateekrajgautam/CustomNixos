@@ -7,6 +7,8 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.cinnamon.enable = true;
 
+  programs.dconf.enable = true;
+
   networking.wireless.enable = lib.mkForce false;
   networking.networkmanager.enable = true;
 }

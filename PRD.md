@@ -1019,3 +1019,291 @@ Your distro should effectively have **three experiences**:
 3. **Complete Mode** — "Once Internet is available, MyDistro configures itself into the full intended environment."
 
 That is a strong foundation for a NixOS-based distribution. The most important engineering task before implementing branding or additional packages is to define the **Stage 1 closure and Stage 2 module boundary** precisely. Once those are stable, the ISO, installer, branding and post-install configuration can all be built around the same flake.
+
+## 30. Repository Audit (2026-09-25)
+
+This section records the state found at the start of the 2026-09-25 audit. Section 36 records the fixes and successful builds completed afterward.
+
+### Current build entry points
+
+| Build | Configuration | Current behavior |
+| --- | --- | --- |
+| Minimal | `iso-minimal.nix` via `build-iso-minimal.sh` | Imports the NixOS graphical Calamares base and adds Cinnamon plus a small application set |
+| Full | `iso-full.nix` via `build-iso-full.sh` | Imports the same graphical installer base and adds Cinnamon plus the large package modules |
+| Common dispatcher | `build-iso.sh minimal\|full` | Implements naming, logging, direct store-result capture, safe copy and checksum generation for both wrappers |
+
+Both named builds are intended to boot into a Cinnamon graphical live session. This has been demonstrated for at least one built ISO, but it is not yet protected by an automated boot test.
+
+### Installer finding
+
+The missing desktop installation shortcut was an expected result of the pre-fix configuration:
+
+* The minimal image does not include Calamares.
+* The full image adds the generic `calamares` package through `modules/systemPackagesforiso.nix`.
+* Neither image imports NixOS's Calamares graphical installer integration.
+* No repository-owned Calamares `settings.conf`, module configuration, branding, launch wrapper, desktop entry or autostart definition exists.
+* The required Polkit `pkexec` wrapper and partition-manager integration are not enabled.
+
+Adding the generic package is therefore insufficient. The implemented baseline now imports the NixOS 26.05 graphical Calamares module, which provides `calamares-nixos`, `calamares-nixos-extensions`, an autostart item, partition-manager integration, live-media Polkit authorization and all supported locales. The project layers its **Install Testing** launcher and desktop branding on top.
+
+### Live-user permissions finding
+
+The pre-fix live user placed `security.sudo.wheelNeedsPassword` incorrectly inside `users.users.nixos` and added `docker` even to Minimal. The corrected module defines the sudo policy at system level, enables graphical automatic login, and limits the shared live user to `networkmanager` and `wheel`; the Full Docker module adds `docker` only for Full. Evaluation and ISO construction pass, while runtime privilege behavior remains part of the VM test matrix.
+
+The live-image permission baseline shall be:
+
+* `nixos` is a normal live user and is automatically logged into the live desktop.
+* `nixos` belongs to `wheel` and `networkmanager`.
+* Passwordless sudo is enabled for `wheel` only in the live environment.
+* Calamares elevation works through Polkit/`pkexec` without asking for an unknown password.
+* GParted can be launched through the desktop and can acquire the privileges required to inspect or edit disks.
+* The `docker` group is present only in editions where Docker is enabled and required.
+* The installed system does not inherit the live user's passwordless-sudo policy or any fixed live/root password.
+
+### GParted finding
+
+GParted is already included in both named builds:
+
+* Minimal: directly in `iso-minimal.nix`.
+* Full: through `modules/systemPackagesforiso.nix`.
+
+Package inclusion does not by itself prove that desktop launch and privilege elevation work. These remain release-test requirements.
+
+### Pre-fix reproducibility and maintainability findings
+
+* The build scripts request the moving `nixos-26.05` channel; there is no flake or lock file in this folder, so builds are not pinned.
+* The former duplicate build scripts did not share one implementation. They now delegate to the common `build-iso.sh` dispatcher.
+* The former scripts did not save logs or hashes. The common dispatcher now saves timestamped logs and SHA-256 files, while machine-readable release metadata remains pending.
+* The full package list mixes live tools, installed-system packages and optional post-install packages, preventing a dependable offline closure boundary.
+* Several advanced services and development packages are imported into the full live image even though they are not necessary for installation.
+* There is no first-boot selector, persisted setup state, or package-selection manifest in the repository yet.
+
+## 31. Product Editions for the Testing Customization Milestone
+
+The initial customization milestone shall use the distribution name **Testing**. It is a temporary, replaceable brand used to validate the customization architecture.
+
+### Shared behavior
+
+Both editions shall:
+
+1. Boot into a usable Cinnamon graphical live environment.
+2. Allow the user to explore the live system without installing.
+3. Show a clearly labelled **Install Testing** desktop shortcut and application-menu entry.
+4. Include a working graphical partitioning path and GParted.
+5. Install their defined base system with all network interfaces disconnected.
+6. Boot the installed system into a graphical environment immediately after installation.
+7. Use the same shared branding, live-user and installer modules.
+8. Keep the live configuration separate from the target installed-system configuration.
+
+### Testing Minimal
+
+Testing Minimal is a small offline-installable graphical base. The ISO contains everything needed to install and boot the base desktop, but large and optional packages are deferred.
+
+After the installed system boots, a **Testing Setup** application shall:
+
+1. Explain that the base system is already usable.
+2. Check network availability without blocking use of the desktop.
+3. Ask whether the user wants to refresh the configuration/package definitions before applying them.
+4. Display packages/features grouped by purpose with sensible defaults.
+5. Let the user select or unselect optional packages before any changes are applied.
+6. Show a summary of planned changes and require confirmation.
+7. Apply the selected declarative configuration as a new NixOS generation.
+8. Preserve the current working generation if download, evaluation or activation fails.
+9. Save progress under `/var/lib/testing-setup/` and allow safe retry later.
+
+The update question and package selection are distinct decisions. Declining the update must not silently prevent use of the locally shipped configuration when that configuration can be applied offline.
+
+### Testing Full
+
+Testing Full contains the selected full workstation package closure on the ISO and installs it without Internet. It shall still present the same live desktop, installer, branding and recovery behavior as Testing Minimal. Post-install setup may offer updates and profile changes, but the installed full profile must be usable before those optional online actions.
+
+### Package classification
+
+Every package or service must belong to exactly one initial class:
+
+| Class | Minimal ISO | Full ISO | Installed offline | User-selectable after boot |
+| --- | --- | --- | --- | --- |
+| Live-only | Yes | Yes | No | No |
+| Shared base | Yes | Yes | Yes | No |
+| Full profile | No | Yes | Full only | Yes, where modular |
+| Optional online | No | No unless explicitly cached | No | Yes |
+
+The current `modules/systemPackagesforiso.nix` list must be split according to this table before the offline-install guarantee can be accepted.
+
+## 32. Testing Brand and Theme Requirements
+
+The customization proof shall demonstrate that identity is data-driven rather than scattered across ISO definitions.
+
+Required replaceable inputs:
+
+* Product name: `Testing`
+* Edition: `Minimal` or `Full`
+* Version and build identifier
+* Primary and accent colors
+* Desktop wallpaper
+* Login-screen background
+* Installer name, icon, slideshow and color treatment
+* Boot-menu title and artwork where supported
+* Welcome/setup application identity
+
+The implemented source of truth for these identity values is `branding/branding.json`. It currently defines the product ID and name, tagline, wallpaper, logo, installer icon, primary and secondary colors, GTK theme and icon theme. Asset paths are relative to the `branding/` directory. Both edition definitions and shared live modules consume the same file.
+
+For the first visual test, use one repository-owned wallpaper and one coherent Cinnamon/GTK color theme. The brand module shall expose these inputs to both editions, while edition-specific values are limited to the edition name and package/profile selection.
+
+Brand assets must be stored in a dedicated `branding/` tree with license and source information. Theme application must be declarative and must work for the live user and newly created installed users.
+
+## 33. Offline Installation Contract
+
+An edition may be described as offline-installable only when all of the following pass with networking disabled before boot:
+
+1. The ISO reaches the live graphical desktop.
+2. **Install Testing** launches successfully from the desktop shortcut.
+3. Automatic UEFI/GPT/ext4 installation completes on an empty virtual disk.
+4. User, locale, keyboard and time-zone selections are reflected in the installed system.
+5. Installation performs no required network fetch.
+6. The installed bootloader starts.
+7. The installed system reaches its graphical login or desktop.
+8. The created user can perform intended administrative actions using the installed-system policy.
+9. Minimal remains usable when Stage 2 is postponed or fails.
+10. Full contains and launches the promised full-profile applications without a post-install download.
+
+The build pipeline must test both UEFI and legacy BIOS boot where supported. UEFI is the release-blocking target for the first milestone.
+
+## 34. First-Boot Package Selection Requirements
+
+The selector is a configuration generator, not an imperative package installer. It shall write a user choice manifest consumed by Nix modules or a flake profile.
+
+Initial selectable groups should include:
+
+* Browsers
+* Office and PDF tools
+* Graphics and media
+* Development languages and editors
+* Containers and virtualization
+* Networking and remote-access tools
+* Printing and scanning
+* Advanced storage tools
+
+Dependencies and mutually exclusive choices must be enforced by the model. The user interface shall show approximate download size when it can be calculated, clearly mark packages requiring Internet, and offer **Select defaults**, **Select all**, and **Clear optional** actions.
+
+Before activation the application shall show:
+
+* Configuration source and revision
+* Whether definitions were refreshed
+* Selected profile and packages
+* Packages requiring download
+* Available disk space and estimated requirement
+* The rollback behavior
+
+No update or rebuild shall run automatically merely because the machine gained Internet access.
+
+## 35. Acceptance Criteria for the Next Milestone
+
+The next milestone is complete only when:
+
+- [ ] Minimal and Full both boot to the branded Testing Cinnamon live desktop.
+- [ ] Both have a visible, correctly named installer shortcut.
+- [ ] Both use the NixOS-aware Calamares package and required extensions/configuration.
+- [ ] Live-user sudo, Polkit, Calamares and GParted elevation are tested.
+- [ ] Both complete the defined offline installation test.
+- [ ] Both installed systems boot graphically without Internet.
+- [ ] Minimal starts the first-boot setup flow without making changes automatically.
+- [ ] The setup flow asks about definition updates and allows package selection/unselection.
+- [ ] A failed or cancelled Stage 2 leaves a working system and can be retried.
+- [ ] Testing name, wallpaper and color theme appear consistently in boot/live/installer/installed surfaces selected for this milestone.
+- [ ] Builds are pinned through a lock file.
+- [x] Builds produce a timestamped log and ISO SHA-256 file.
+- [ ] Builds produce machine-readable release metadata.
+- [ ] The full package inventory is classified as live-only, shared base, full-profile or optional-online.
+
+Earlier `[x]` examples in the suggested MVP section describe desired deliverables, not verified repository status. Only this acceptance checklist records completion status for the current implementation.
+
+## 36. Build Record (2026-09-25 UTC)
+
+The updated Minimal and Full configurations both evaluated and built successfully in the existing Ubuntu WSL environment against the `nixos-26.05` channel.
+
+| Edition | Result | ISO size | SHA-256 |
+| --- | --- | ---: | --- |
+| Testing Minimal | Build and checksum verification passed | 3,288,973,312 bytes | `0c2b51e963ee9035827715ae12f025833504ebb0d876646a4e0a1bc2aebbd5cc` |
+| Testing Full | Build and checksum verification passed | 7,988,520,960 bytes | `383ed21d4830cb774664d190c5da5d9c07b59cdf2aff09735cd3463c1a35155e` |
+
+Both artifacts were identified as bootable ISO 9660 images with DOS/MBR boot sectors. This build record does not mark the graphical boot or offline-install acceptance criteria complete; those require VM execution and installation tests.
+
+Build-time defects corrected during this run:
+
+* Replaced the generic Calamares package with the NixOS graphical Calamares integration.
+* Added the installer desktop launcher and live-only elevation path.
+* Corrected the misplaced sudo option and removed the irrelevant Docker group from Minimal.
+* Corrected the Full Docker module's hard-coded, undefined user.
+* Removed the Cloudflare host-secret dependency from the public Full live image.
+* Replaced Windows-mounted Nix result symlinks with direct store-result capture.
+* Added partial-copy handling, stable artifact names, timestamped logs and checksums.
+
+Observed non-blocking issue:
+
+* Full includes both VS Code and VSCodium, causing extensive system-path collision warnings. The build succeeds, but the future package-profile split must select one by default.
+
+## 37. Configuration, Automation and Secret-Handling Update (2026-09-26)
+
+### Automated dual build
+
+`shell.nix` is the automation entry point. Entering `nix-shell` runs the Minimal build followed by the Full build using the common logged build scripts. `TESTING_SKIP_AUTO_BUILD=1 nix-shell` opens a maintenance shell without starting either build.
+
+This automation does not replace release pinning. It currently follows the configured `nixos-26.05` channel, so a flake and lock file remain required for reproducible releases.
+
+### Branding configuration contract
+
+`branding/branding.json` is the editable branding contract. The following fields are implemented:
+
+| Field | Consumer |
+| --- | --- |
+| `id` | Hostname prefix, release file path, ISO/log/checksum filename prefix and desktop launcher ID |
+| `name` | Installer label and release identity |
+| `tagline` | Release metadata and installer launcher description |
+| `wallpaper` | Cinnamon live-desktop background |
+| `logo` | Installed branding asset for later boot/installer surfaces |
+| `installerIcon` | Installer desktop and menu entry |
+| `primaryColor`, `secondaryColor` | Cinnamon background colors |
+| `gtkTheme`, `iconTheme` | Cinnamon interface defaults |
+
+Changing a branding value must not require editing either edition definition. JSON parsing and both ISO evaluations must pass before accepting a branding change.
+
+### Cloudflare security contract
+
+Cloudflare Tunnel is an opt-in installed-system service and must not be imported into public live media. The module shall never read a build-host token or interpolate a token into the Nix store or systemd command line.
+
+The implemented service uses a runtime token path, defaulting to:
+
+```text
+/etc/testing/secrets/cloudflare-tunnel-token
+```
+
+The service uses `cloudflared tunnel run --token-file`. It starts only when the token file exists. The administrator must provision the file after installation with ownership readable by the `cloudflared` service account and restrictive permissions. Repository files contain placeholders only.
+
+### Caddy security contract
+
+Caddy is an opt-in installed-system service and is excluded from both live images. The repository's Caddy files are sanitized examples containing no real domains, public routes, private LAN/Tailscale addresses, tokens or credentials.
+
+Production routing must be supplied by the installed-system configuration. Authentication material must remain in permission-restricted runtime secret files and must never be committed inside a Caddy configuration.
+
+### ZFS safety contract
+
+ZFS pool management is disabled by default. Enabling `testing.zfs` requires:
+
+* A unique eight-hex-digit `testing.zfs.hostId` generated for the installed machine.
+* An explicit, non-empty `testing.zfs.poolName`.
+* A deliberate decision before enabling `testing.zfs.forceImportRoot`; its default is `false`.
+
+The module imports only the explicitly named pool, enables scrub and trim for that pool, and does not use the former shared `89ABCDEF` host ID or assume a pool named `tank`.
+
+### Verification status
+
+The following evaluation checks passed after this update:
+
+- [x] `shell.nix` evaluates.
+- [x] `branding/branding.json` parses.
+- [x] Minimal and Full ISO configurations evaluate with JSON-driven branding.
+- [x] Cloudflare, Caddy and ZFS modules evaluate together with their opt-in features enabled and placeholder test values.
+- [x] Sanitized configuration trees contain none of the removed real domains or private node addresses.
+- [ ] Minimal and Full artifacts have been rebuilt after this update.
+- [ ] Runtime Cloudflare, Caddy and ZFS behavior has been tested on an installed system.

@@ -20,6 +20,7 @@
         coreutils    # Basic file utilities
         busybox      # Lightweight Unix utilities
 	insomnia     # API testing
+        # Calamares is provided by the NixOS graphical installer module.
         chromium
 	brave
         firefox-devedition
@@ -145,4 +146,3 @@
     # flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
   };
 }
-

@@ -1,0 +1,14 @@
+{
+	admin off
+}
+
+# Replace this placeholder after installation. Keep credentials in separate,
+# permission-restricted files; never put API tokens in this configuration.
+:8080 {
+	encode zstd gzip
+	header {
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "SAMEORIGIN"
+	}
+	respond "Testing Caddy placeholder" 200
+}

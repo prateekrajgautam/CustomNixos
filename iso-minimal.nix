@@ -1,15 +1,25 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, modulesPath, ... }:
+let
+  brand = builtins.fromJSON (builtins.readFile ./branding/branding.json);
+in
 {
   nixpkgs.config.allowUnfree = true;
   imports = [
-    <nixpkgs/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix>
+    "${modulesPath}/installer/cd-dvd/installation-cd-graphical-calamares.nix"
     ./modules/cinnamon-desktop.nix
     ./modules/default-user.nix
+    ./modules/live-installer.nix
+    ./modules/testing-branding.nix
     ./modules/sane-extra-config.nix
     # Provide an initial copy of the NixOS channel so that the user
     # doesn't need to run "nix-channel --update" first.
     <nixpkgs/nixos/modules/installer/cd-dvd/channel.nix>
   ];
+
+  _module.args.edition = "Minimal";
+
+  image.fileName = lib.mkForce "${brand.id}-minimal-${config.system.nixos.label}-${pkgs.stdenv.hostPlatform.system}.iso";
+  boot.zfs.forceImportRoot = false;
 
   environment.systemPackages = with pkgs; [
     # Core system utilities
@@ -62,6 +72,6 @@
   # Enable SSH for remote access during install
   services.openssh.enable = true;
 
-  # Set root password for installer
-  users.users.root.initialPassword = "nixos";
+  # The root account remains locked; live administration goes through the
+  # passwordless wheel policy in the live-user module.
 }

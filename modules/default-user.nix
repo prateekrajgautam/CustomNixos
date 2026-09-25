@@ -1,17 +1,18 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # This account exists only in the live environment.
   users.users.nixos = {
     isNormalUser = true;
-    description = "NixOS User";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
-    # password is not set by default, but user can set it via passwd
+    description = "Testing Live User";
+    extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  users.users.prateek = {
-    isNormalUser = true;
-    description = "Prateek";
-    extraGroups = [ "networkmanager" "wheel" "docker" "audio" "bluetooth" "scanner" "lp" "libvirtd" "virtualbox" ];
+  # Live-media convenience only. Do not import this module into an installed
+  # system: installed users must get the normal sudo/password policy.
+  security.sudo.wheelNeedsPassword = false;
+
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "nixos";
   };
-  users.groups.prateek = {};
 }

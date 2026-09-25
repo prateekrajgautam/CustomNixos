@@ -6,7 +6,7 @@ with lib;
   config = {
   
   
-    users.users.prateek.extraGroups = [ "docker" ];
+    users.users.nixos.extraGroups = [ "docker" ];
 
     virtualisation.docker = {
       enable = true;

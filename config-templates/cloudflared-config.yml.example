@@ -1,0 +1,8 @@
+# Do not commit the real credentials file, token, account ID or tunnel ID.
+tunnel: REPLACE_WITH_TUNNEL_UUID
+credentials-file: /etc/testing/secrets/cloudflare-tunnel-credentials.json
+
+ingress:
+  - hostname: app.example.invalid
+    service: http://127.0.0.1:8080
+  - service: http_status:404

@@ -1,19 +1,25 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
-# Standard Caddy — no custom build needed.
-# Cloudflared tunnel terminates TLS at Cloudflare's edge.
-# Traffic arrives here as plain HTTP on port 80.
-# Caddy just routes by hostname — no TLS config required.
-
+let
+  cfg = config.testing.services.caddy;
+in
 {
-   environment.systemPackages = [
-      pkgs.caddy
-   ];
+  options.testing.services.caddy = {
+    enable = lib.mkEnableOption "the Caddy installed-system service";
+    configuration = lib.mkOption {
+      type = lib.types.lines;
+      default = builtins.readFile ../config-templates/Caddyfile.example;
+      description = "Caddy configuration. Secrets must use runtime files, not this value.";
+    };
+  };
 
-  services.caddy = {
-    enable = true;
-    configFile = pkgs.writeText "Caddyfile" (builtins.readFile ./Caddyfile);
-#    configFile = /etc/nixos/modules/Caddyfile;
-#    configFile = ./modules/Caddyfile;
+  config = {
+    environment.systemPackages = [ pkgs.caddy ];
+    environment.etc."testing/examples/Caddyfile.example".source =
+      ../config-templates/Caddyfile.example;
+    services.caddy = lib.mkIf cfg.enable {
+      enable = true;
+      extraConfig = cfg.configuration;
+    };
   };
 }

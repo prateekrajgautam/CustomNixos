@@ -1,0 +1,13 @@
+{
+  "id": "nixos",
+  "name": "NixOS",
+  "tagline": "Explore. Install. Make it yours.",
+  "wallpaper": "wallpapers/nixos.svg",
+  // "logo": "icons/nixos-logo.svg",
+  "installerIcon": "calamares",
+  "primaryColor": "#182433",
+  "secondaryColor": "#46627f",
+  "gtkTheme": "Mint-Y-Dark-Aqua",
+  "iconTheme": "Mint-Y-Aqua"
+}
+
