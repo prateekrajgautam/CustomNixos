@@ -14,6 +14,8 @@ let
             fsType = "ext4";
           };
           networking.networkmanager.enable = true;
+          hardware.enableAllFirmware = true;
+          programs.nm-applet.enable = true;
           services.xserver.enable = true;
           services.xserver.displayManager.lightdm.enable = true;
           services.xserver.desktopManager.cinnamon.enable = true;
@@ -67,6 +69,11 @@ in
             --replace-fail \
               "    # Write the configuration.nix file" \
               $'    # Persist the edition profile and its modules for future rebuilds.\n    libcalamares.utils.host_env_process_output(\n        ["cp", "-r", "${installedProfileBundle}/.", root_mount_point], None\n    )\n\n    # Write the configuration.nix file'
+
+          substituteInPlace $out/lib/calamares/modules/nixos/main.py \
+            --replace-fail \
+              $'            "--root",\n            root_mount_point' \
+              $'            "--root",\n            root_mount_point,\n            # pkexec sanitizes NIX_CONFIG, so enforce offline behavior on the\n            # privileged nixos-install command itself.\n            "--option",\n            "substituters",\n            "",\n            "--option",\n            "fallback",\n            "false",\n            "--option",\n            "connect-timeout",\n            "1"'
         '';
       });
     })

@@ -1,4 +1,0 @@
-[2026-09-25T20:42:41Z] Building NixOS Minimal ISO
-Configuration: /mnt/d/customnixosiso/iso-minimal.nix
-Output directory: /mnt/d/customnixosiso
-Log: /mnt/d/customnixosiso/build-logs/nixos-minimal-20260925T204241Z.log

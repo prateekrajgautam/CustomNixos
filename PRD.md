@@ -1307,3 +1307,10 @@ The following evaluation checks passed after this update:
 - [x] Sanitized configuration trees contain none of the removed real domains or private node addresses.
 - [ ] Minimal and Full artifacts have been rebuilt after this update.
 - [ ] Runtime Cloudflare, Caddy and ZFS behavior has been tested on an installed system.
+
+
+
+# Cache tar archieve for reuse
+- warning: Nix search path entry 'channel:nixos-26.05' does not exist, ignoring
+- unpacking 'https://nixos.org/channels/nixos-26.05/nixexprs.tar.xz' into the Git cache...
+- warning: error: unable to download 'https://nixos.org/channels/nixos-26.05/nixexprs.tar.xz': SSL connect error (35) TLS connect error: error:00000000:lib(0)::reason(0); retrying in 279 ms

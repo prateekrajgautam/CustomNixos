@@ -8,6 +8,7 @@
   ];
   services.printing.enable = true;
   hardware.sane.enable = true;
+  hardware.enableAllFirmware = true;
+  programs.nm-applet.enable = true;
   services.openssh.enable = true;
 }
-
