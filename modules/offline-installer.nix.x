@@ -46,18 +46,7 @@ let
   offlineCalamares = pkgs.writeShellScript "calamares-offline" ''
     # The installer must use only paths embedded in the ISO. If the closure is
     # incomplete, fail locally instead of silently downloading from a cache.
-    #
-    # substituters="" + fallback=false only block fetching a pre-built binary.
-    # They do NOT stop Nix from deciding to *build* a missing derivation
-    # locally, and building always has network access to fetch that
-    # derivation's own source tarball (fixed-output derivations are exempt
-    # from the sandbox's network restriction). That is what let nixos-install
-    # cascade into recompiling gcc/binutils/bash/coreutils from source and
-    # fetching Perl build-tooling from CPAN/GNU mirrors. max-jobs=0 is the
-    # setting that actually forecloses that: it disables local building
-    # entirely, so a missing path fails immediately and by name instead of
-    # triggering a from-source rebuild of the world.
-    export NIX_CONFIG=$'substituters =\nconnect-timeout = 1\nfallback = false\nmax-jobs = 0'
+    export NIX_CONFIG=$'substituters =\nconnect-timeout = 1\nfallback = false'
     exec ${pkgs.calamares-nixos}/bin/calamares "$@"
   '';
 in
@@ -84,7 +73,7 @@ in
           substituteInPlace $out/lib/calamares/modules/nixos/main.py \
             --replace-fail \
               $'            "--root",\n            root_mount_point' \
-              $'            "--root",\n            root_mount_point,\n            # pkexec sanitizes NIX_CONFIG, so enforce offline behavior on the\n            # privileged nixos-install command itself. max-jobs=0 is the\n            # option that actually blocks local building of a missing\n            # derivation (substituters/fallback only block fetching a\n            # pre-built binary, not building-from-source, whose source\n            # fetch is unaffected by either of them).\n            "--option",\n            "substituters",\n            "",\n            "--option",\n            "fallback",\n            "false",\n            "--option",\n            "connect-timeout",\n            "1",\n            "--option",\n            "max-jobs",\n            "0"'
+              $'            "--root",\n            root_mount_point,\n            # pkexec sanitizes NIX_CONFIG, so enforce offline behavior on the\n            # privileged nixos-install command itself.\n            "--option",\n            "substituters",\n            "",\n            "--option",\n            "fallback",\n            "false",\n            "--option",\n            "connect-timeout",\n            "1"'
         '';
       });
     })
@@ -95,13 +84,9 @@ in
   system.extraDependencies = [ efiTargetSystem biosTargetSystem ];
 
   # Runtime defaults provide a second guard in addition to the launcher.
-  # max-jobs=0 is the setting that actually enforces "fail locally instead
-  # of building" — substituters/fallback alone only block fetching a
-  # pre-built binary, not a from-source build's own source-tarball fetch.
   nix.settings.substituters = lib.mkForce [ ];
   nix.settings.connect-timeout = 1;
   nix.settings.fallback = false;
-  nix.settings.max-jobs = lib.mkForce 0;
 
   _module.args.offlineCalamares = offlineCalamares;
 }
