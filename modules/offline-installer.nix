@@ -4,7 +4,19 @@ let
   # `modulesPath` is <nixpkgs>/nixos/modules.  Keep the exact nixpkgs tree
   # used to build the ISO reachable by the privileged installer instead of
   # relying on /root/.nix-defexpr or the asynchronously-created root channel.
-  nixpkgsPath = builtins.dirOf (builtins.dirOf modulesPath);
+  # pkgs.path preserves the Nix store dependency context. Reconstructing this
+  # with builtins.dirOf produces the same text but loses that context, causing
+  # isoImage.storeContents to fail while exporting its closure.
+  nixpkgsPath = pkgs.path;
+
+  # isoImage.storeContents coerces a bare source path to a new store name. If
+  # /etc/nixpkgs points at the original name, that produces a dangling link.
+  # Put the tree in an explicit derivation output so the path referenced by
+  # /etc and the path exported to nix-store.squashfs are necessarily identical.
+  offlineNixpkgs = pkgs.runCommand "offline-nixpkgs" { } ''
+    mkdir -p "$out"
+    cp -a ${nixpkgsPath}/. "$out/"
+  '';
 
   mkTargetSystem = bootModule:
     (import "${modulesPath}/../lib/eval-config.nix" {
@@ -41,10 +53,10 @@ let
   });
 
   installedProfileBundle = pkgs.runCommand "offline-installed-profile" { } ''
-    mkdir -p $out/etc/nixos $out/etc/modules
+    mkdir -p $out/etc/nixos/modules
     cp ${installedProfile} $out/etc/nixos/offline-profile.nix
     ${lib.concatMapStrings (modulePath: ''
-      cp ${modulePath} $out/etc/modules/${builtins.baseNameOf modulePath}
+      cp ${modulePath} $out/etc/nixos/modules/${builtins.baseNameOf modulePath}
     '') installedModuleFiles}
   '';
 
@@ -96,13 +108,15 @@ in
   ];
 
   # Give the installer a stable path to the exact nixpkgs tree used to build
-  # this ISO.  Materialising it through /etc creates a real reference from the
-  # live-system closure, so the source is included in nix-store.squashfs.
-  environment.etc."nixpkgs".source = nixpkgsPath;
+  # this ISO.
+  environment.etc."nixpkgs".source = offlineNixpkgs;
 
-  # Keep complete BIOS and UEFI target closures on the ISO. The basic
-  # no-desktop installation is a subset of these Cinnamon seed closures.
-  system.extraDependencies = [ nixpkgsPath efiTargetSystem biosTargetSystem ];
+  # Explicitly put the source plus complete BIOS and UEFI target closures in
+  # nix-store.squashfs. system.extraDependencies alone registers dependencies
+  # for the live system but does not make them members of the ISO store.
+  # The basic no-desktop installation is a subset of the Cinnamon closures.
+  isoImage.storeContents = [ offlineNixpkgs efiTargetSystem biosTargetSystem ];
+  system.extraDependencies = [ offlineNixpkgs efiTargetSystem biosTargetSystem ];
 
   # Offline restrictions are deliberately applied to the Calamares process
   # and its nixos-install command above, not to the whole live system.  This

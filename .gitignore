@@ -1,2 +1,3 @@
 **/*.iso
 */customnixosiso/
+*/*.log

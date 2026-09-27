@@ -50,13 +50,22 @@ let
         && config.hardware.enableRedistributableFirmware;
     }
     {
-      name = "pinned nixpkgs is materialised in /etc/nixpkgs";
+      name = "packaged nixpkgs is materialised in /etc/nixpkgs";
       ok = config.environment.etc ? "nixpkgs"
-        && toString config.environment.etc."nixpkgs".source == toString nixpkgs;
+        && lib.hasSuffix "-offline-nixpkgs"
+          (toString config.environment.etc."nixpkgs".source);
     }
     {
-      name = "offline target closures are retained";
-      ok = builtins.length config.system.extraDependencies >= 3;
+      name = "the exact /etc/nixpkgs target is included in the ISO store";
+      ok = lib.any
+        (item:
+          toString item == toString config.environment.etc."nixpkgs".source)
+        config.isoImage.storeContents;
+    }
+    {
+      name = "offline target closures are explicitly retained in the ISO store";
+      ok = builtins.length config.isoImage.storeContents >= 4
+        && builtins.length config.system.extraDependencies >= 3;
     }
     {
       name = "live Nix retains its normal online substituter";

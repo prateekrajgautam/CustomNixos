@@ -48,7 +48,8 @@ bash -n "$SCRIPT_DIR/build-iso.sh" \
   "$SCRIPT_DIR/build-iso-bare.sh" \
   "$SCRIPT_DIR/build-iso-minimal.sh" \
   "$SCRIPT_DIR/build-iso-full.sh" \
-  "$SCRIPT_DIR/test-project.sh"
+  "$SCRIPT_DIR/test-project.sh" \
+  "$SCRIPT_DIR/verify-iso.sh"
 
 nix-instantiate --eval --strict --json --expr \
   "builtins.fromJSON (builtins.readFile $SCRIPT_DIR/branding/branding.json)" \

@@ -6,11 +6,11 @@ This directory builds three NixOS 26.05 Cinnamon live images:
 * **Testing Minimal** — graphical live environment, Calamares installer, GParted, browser and core utilities.
 * **Testing Full** — the same live/installer foundation plus the workstation package and service modules.
 
-Both configurations use the NixOS-aware Calamares integration rather than the generic Calamares package. They include a live-only `nixos` user, Cinnamon automatic login, passwordless live administration, Polkit installer elevation, and an **Install Testing** desktop shortcut.
+All three configurations use the NixOS-aware Calamares integration rather than the generic Calamares package. They include a live-only `nixos` user, Cinnamon automatic login, passwordless live administration, Polkit installer elevation, and an **Install Testing** desktop shortcut.
 
 ## Offline installation guarantee
 
-Both editions are configured for installation with networking disconnected:
+All three editions are configured for installation with networking disconnected:
 
 * Calamares does not check for or require internet connectivity.
 * The installer offers the supported **Cinnamon desktop** and **Basic system** targets only.
@@ -18,7 +18,7 @@ Both editions are configured for installation with networking disconnected:
 * The privileged `nixos-install` process receives the exact pinned nixpkgs source path embedded in the ISO; it does not depend on a root channel being initialized first.
 * Calamares runs with an empty Nix substituter list. It may assemble the machine-specific system locally, but cannot obtain packages from a binary cache.
 * Offline restrictions apply only to Calamares. The live desktop keeps normal networking and Nix binary-cache access when the user chooses to connect.
-* The selected edition profile is copied to `/etc/nixos/offline-profile.nix`. Full also copies its referenced modules to `/etc/modules`, so later `nixos-rebuild` evaluations remain valid.
+* The selected edition profile is copied to `/etc/nixos/offline-profile.nix`. Full also copies its referenced modules to `/etc/nixos/modules`, so later `nixos-rebuild` evaluations remain valid.
 
 The embedded target closures increase image size. Do not remove `modules/offline-installer.nix` or replace it with only `channel.nix`: a channel contains Nix expressions, not the complete package closure needed for an offline installation.
 
@@ -29,6 +29,7 @@ Run from this directory inside WSL:
 ```bash
 ./build-iso-minimal.sh
 ./build-iso-full.sh
+./build-iso-bare.sh
 ```
 
 Or use the common entry point:
@@ -36,6 +37,7 @@ Or use the common entry point:
 ```bash
 ./build-iso.sh minimal
 ./build-iso.sh full
+./build-iso.sh bare
 ```
 
 The build scripts:
@@ -46,7 +48,8 @@ The build scripts:
 4. Copy through an `*.partial` file and atomically rename the completed image.
 5. Place the ISO directly in this directory.
 6. Create a matching `.sha256` file.
-7. Save timestamped output under `build-logs/`.
+7. Validate the checksum, BIOS/UEFI boot records and embedded installer source.
+8. Save timestamped output under `build-logs/`.
 
 This avoids the DrvFs permission failures caused by read-only store outputs and unsupported Nix result symlinks.
 
@@ -81,6 +84,15 @@ PREFLIGHT_ONLY=1 ./build-iso.sh bare
 This gate proves evaluation and configuration invariants; it cannot prove that
 a particular physical Wi-Fi chipset works or that a BIOS/UEFI installation
 boots. Those remain VM and hardware tests after the ISO has been built.
+
+Each completed build also runs `verify-iso.sh`. This post-build check validates
+the checksum, requires bootable BIOS and UEFI El Torito entries, and confirms
+that `/etc/nixpkgs` points to the same `offline-nixpkgs` directory physically
+present in `nix-store.squashfs`. It can also be run manually from a build shell:
+
+```bash
+bash ./verify-iso.sh ./nixos-bare-26.05-YYYYMMDD-x86_64.iso
+```
 
 ## Verified build from 2026-09-25 UTC
 

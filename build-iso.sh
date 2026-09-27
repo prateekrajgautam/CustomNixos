@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -i bash -p bash coreutils curl gnused
+#!nix-shell -i bash -p bash coreutils curl gnused libisoburn squashfsTools
 #
 # Runs the same way on NixOS or on Ubuntu/WSL: the two lines above are a
 # nix-shell shebang, so the kernel launches this file through `nix-shell -i
@@ -18,13 +18,13 @@ usage() {
 
 check_deps() {
   local missing=()
-  for cmd in nix-build nix-instantiate nix-prefetch-url curl sed; do
+  for cmd in nix-build nix-instantiate nix-prefetch-url curl sed xorriso unsquashfs; do
     command -v "$cmd" >/dev/null 2>&1 || missing+=("$cmd")
   done
   if (( ${#missing[@]} )); then
     echo "ERROR: missing required tools: ${missing[*]}" >&2
     echo "       Install Nix (https://nixos.org/download) and re-run, or run" >&2
-    echo "       this script under 'nix-shell -p nix curl gnused' yourself." >&2
+    echo "       this script under 'nix-shell -p nix curl gnused libisoburn squashfsTools' yourself." >&2
     exit 1
   fi
 }
@@ -160,6 +160,9 @@ chmod u+rw,go+r "$TEMP_DESTINATION" 2>/dev/null || true
 mv -f "$TEMP_DESTINATION" "$DESTINATION"
 
 sha256sum "$DESTINATION" > "$DESTINATION.sha256"
+
+echo "Running completed-image validation..."
+bash "$SCRIPT_DIR/verify-iso.sh" "$DESTINATION"
 
 echo "[$(date -u +%FT%TZ)] Build complete"
 echo "ISO: $DESTINATION"
