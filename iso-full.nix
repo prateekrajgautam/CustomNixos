@@ -36,5 +36,11 @@ in
   ];
   image.fileName = lib.mkForce "${brand.id}-full-${config.system.nixos.label}-${pkgs.stdenv.hostPlatform.system}.iso";
   boot.zfs.forceImportRoot = false;
+
+  # Default squashfs compression (xz) is by far the most memory- and
+  # CPU-hungry step in this pipeline — it's what was stalling low-RAM WSL2
+  # VMs during the mksquashfs/xorriso step. gzip trades a somewhat larger
+  # ISO for dramatically lower peak memory use during the build.
+  isoImage.squashfsCompression = "gzip -Xcompression-level 6";
   environment.systemPackages = [ pkgs.neovim ];
 }

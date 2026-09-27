@@ -116,10 +116,18 @@ echo "Configuration:     $CONFIG"
 echo "Output directory:  $SCRIPT_DIR"
 echo "Log:               $LOG_FILE"
 
+# Tunable, not hardcoded — override with e.g. NIX_CORES=1 NIX_MAX_JOBS=1 on a
+# very RAM-constrained machine (WSL2 especially: see .wslconfig memory/swap).
+NIX_CORES="${NIX_CORES:-2}"
+NIX_MAX_JOBS="${NIX_MAX_JOBS:-2}"
+echo "cores/max-jobs:    $NIX_CORES / $NIX_MAX_JOBS"
+
 RESULT="$(nix-build "$NIXPKGS_PATH/nixos" \
   -A config.system.build.isoImage \
   -I "nixos-config=$CONFIG" \
   -I "nixpkgs=$NIXPKGS_PATH" \
+  --cores "$NIX_CORES" \
+  --max-jobs "$NIX_MAX_JOBS" \
   --no-out-link)"
 
 ISO_PATH="$(find "$RESULT" -type f -name '*.iso' -print -quit)"
