@@ -17,6 +17,7 @@ Both editions are configured for installation with networking disconnected:
 * Complete BIOS and UEFI Cinnamon target closures are retained in each ISO; the Basic target is a subset of those closures.
 * The privileged `nixos-install` process receives the exact pinned nixpkgs source path embedded in the ISO; it does not depend on a root channel being initialized first.
 * Calamares runs with an empty Nix substituter list. It may assemble the machine-specific system locally, but cannot obtain packages from a binary cache.
+* Offline restrictions apply only to Calamares. The live desktop keeps normal networking and Nix binary-cache access when the user chooses to connect.
 * The selected edition profile is copied to `/etc/nixos/offline-profile.nix`. Full also copies its referenced modules to `/etc/modules`, so later `nixos-rebuild` evaluations remain valid.
 
 The embedded target closures increase image size. Do not remove `modules/offline-installer.nix` or replace it with only `channel.nix`: a channel contains Nix expressions, not the complete package closure needed for an offline installation.
@@ -39,14 +40,47 @@ Or use the common entry point:
 
 The build scripts:
 
-1. Evaluate `iso-minimal.nix` or `iso-full.nix` against `nixos-26.05`.
-2. Build without creating a Nix result symlink on the Windows-mounted filesystem.
-3. Copy through an `*.partial` file and atomically rename the completed image.
-4. Place the ISO directly in this directory.
-5. Create a matching `.sha256` file.
-6. Save timestamped output under `build-logs/`.
+1. Run the edition preflight checks described below.
+2. Evaluate the selected ISO against the pinned `nixos-26.05` revision.
+3. Build without creating a Nix result symlink on the Windows-mounted filesystem.
+4. Copy through an `*.partial` file and atomically rename the completed image.
+5. Place the ISO directly in this directory.
+6. Create a matching `.sha256` file.
+7. Save timestamped output under `build-logs/`.
 
 This avoids the DrvFs permission failures caused by read-only store outputs and unsupported Nix result symlinks.
+
+## Pre-build validation
+
+Every `build-iso.sh bare|minimal|full` invocation now runs a fast evaluation
+gate before starting the expensive build. It verifies:
+
+* the ISO and every live-system package derivation evaluate;
+* Cinnamon, LightDM and live-user automatic login;
+* NetworkManager, its tray applet, live-user permissions and firmware;
+* NetworkManager and firmware in the copied post-install edition profile;
+* the absence of a conflicting standalone wireless service;
+* the pinned `/etc/nixpkgs` installer source and retained target closures;
+* the Calamares offline launcher while preserving optional live internet use;
+* the optional installed-system service modules and project shell syntax.
+
+Run it independently at any time:
+
+```bash
+bash ./test-project.sh bare
+bash ./test-project.sh all
+```
+
+To exercise the exact pre-build path, including pin and logging setup, without
+starting the ISO build:
+
+```bash
+PREFLIGHT_ONLY=1 ./build-iso.sh bare
+```
+
+This gate proves evaluation and configuration invariants; it cannot prove that
+a particular physical Wi-Fi chipset works or that a BIOS/UEFI installation
+boots. Those remain VM and hardware tests after the ISO has been built.
 
 ## Verified build from 2026-09-25 UTC
 

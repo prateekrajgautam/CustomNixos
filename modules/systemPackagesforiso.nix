@@ -85,7 +85,8 @@
         wlvncc
 	openssl
         vscode
-        vscodium
+	# Keep one VS Code implementation. Installing vscode and vscodium together
+	# creates extensive file collisions in the live system profile.
 	
         # Shell Enhancements
         direnv        # 
@@ -142,6 +143,14 @@
 
     # Enable Flatpak for additional applications
     services.flatpak.enable = true;
+    xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-xapp
+        xdg-desktop-portal-gtk
+      ];
+      configPackages = [ pkgs.cinnamon ];
+    };
     # To add Flathub as a remote: 
     # flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
   };

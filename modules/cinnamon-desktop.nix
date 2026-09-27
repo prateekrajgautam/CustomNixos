@@ -20,10 +20,14 @@
   # Installation media must be able to bring up common Wi-Fi adapters before
   # the target hardware has had a chance to generate its own configuration.
   hardware.enableAllFirmware = true;
+  hardware.enableRedistributableFirmware = true;
 
   environment.systemPackages = with pkgs; [
     iw
     networkmanagerapplet
+    pciutils
+    usbutils
+    util-linux
     wirelesstools
   ];
 }

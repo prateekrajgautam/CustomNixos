@@ -56,7 +56,7 @@ let
     # environment.  Setting NIX_PATH here still makes the live launcher and
     # any non-elevated checks deterministic; the patched command below passes
     # the same value explicitly through pkexec.
-    export NIX_PATH='nixpkgs=${nixpkgsPath}'
+    export NIX_PATH='nixpkgs=/etc/nixpkgs'
     export NIX_CONFIG=$'substituters =\nconnect-timeout = 1\nfallback = false'
     exec ${pkgs.calamares-nixos}/bin/calamares "$@"
   '';
@@ -84,7 +84,7 @@ in
           substituteInPlace $out/lib/calamares/modules/nixos/main.py \
             --replace-fail \
               '            "nixos-install",' \
-              $'            "env",\n            "NIX_PATH=nixpkgs=${nixpkgsPath}",\n            "nixos-install",'
+              $'            "env",\n            "NIX_PATH=nixpkgs=/etc/nixpkgs",\n            "nixos-install",'
 
           substituteInPlace $out/lib/calamares/modules/nixos/main.py \
             --replace-fail \
@@ -95,19 +95,19 @@ in
     })
   ];
 
+  # Give the installer a stable path to the exact nixpkgs tree used to build
+  # this ISO.  Materialising it through /etc creates a real reference from the
+  # live-system closure, so the source is included in nix-store.squashfs.
+  environment.etc."nixpkgs".source = nixpkgsPath;
+
   # Keep complete BIOS and UEFI target closures on the ISO. The basic
   # no-desktop installation is a subset of these Cinnamon seed closures.
-  # Keep the source tree itself in the live-system closure too.  The patched
-  # Calamares command names this path at runtime, but an interpolated path in
-  # generated Python is not by itself a reliable closure edge.
   system.extraDependencies = [ nixpkgsPath efiTargetSystem biosTargetSystem ];
 
-  # Runtime defaults provide a second guard in addition to the launcher.
-  # Do not set max-jobs=0: installation needs to perform the final, local
-  # system assembly after Calamares has generated the machine-specific config.
-  nix.settings.substituters = lib.mkForce [ ];
-  nix.settings.connect-timeout = 1;
-  nix.settings.fallback = false;
+  # Offline restrictions are deliberately applied to the Calamares process
+  # and its nixos-install command above, not to the whole live system.  This
+  # leaves Wi-Fi, browsers and ordinary Nix commands usable when the user
+  # chooses to connect the live session to the internet.
 
   _module.args.offlineCalamares = offlineCalamares;
 }

@@ -1,0 +1,18 @@
+[2026-09-27T11:10:01Z] Building NixOS Bare ISO
+Host:              Linux (non-NixOS, e.g. Ubuntu/WSL)
+Nix version:       nix (Nix) 2.26.1
+nixpkgs revision:  5e2305d577ca00acbba631b05cb1094d172b29f3  (nixos-26.05, pinned in nixpkgs-pin.json)
+nixpkgs path:      /nix/store/pgy8nq09hh4mdgr30ir9v0lcjpz34vxb-source
+Configuration:     /mnt/c/GITHUB/customnixosiso/iso-bare.nix
+Output directory:  /mnt/c/GITHUB/customnixosiso
+Log:               /mnt/c/GITHUB/customnixosiso/build-logs/nixos-bare-20260927T111001Z.log
+cores/max-jobs:    2 / 2
+Running pre-build validation...
+Running static project checks...
+Evaluating optional installed-system service modules...
+Evaluating Bare ISO, installer, networking, firmware and packages...
+{"checkCount":13,"edition":"bare","isoDrv":"/nix/store/v0lsl9xjqrk7y2b9ig2fxvhbbsby9q4r-nixos-26.05pre-git-x86_64-linux.iso.drv","nixpkgsSource":"/nix/store/pgy8nq09hh4mdgr30ir9v0lcjpz34vxb-source","packageCount":297}
+Evaluating Bare installed-system profile and post-install networking...
+{"checkCount":4,"edition":"bare","packageCount":139,"systemDrv":"/nix/store/0bw64szr3aqa04mrn1wbhq9r7bhndsw4-nixos-system-nixos-26.05pre-git.drv"}
+Preflight passed for: bare
+Preflight-only mode requested; ISO build skipped.

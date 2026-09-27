@@ -122,6 +122,18 @@ NIX_CORES="${NIX_CORES:-2}"
 NIX_MAX_JOBS="${NIX_MAX_JOBS:-2}"
 echo "cores/max-jobs:    $NIX_CORES / $NIX_MAX_JOBS"
 
+# Fail quickly before the expensive ISO build if the selected edition has a
+# broken module option, package, installer path, firmware or networking setup.
+# This evaluates derivations but does not build their outputs.
+echo "Running pre-build validation..."
+NIXPKGS_PATH_OVERRIDE="$NIXPKGS_PATH" \
+  bash "$SCRIPT_DIR/test-project.sh" "$EDITION"
+
+if [[ "${PREFLIGHT_ONLY:-0}" == "1" ]]; then
+  echo "Preflight-only mode requested; ISO build skipped."
+  exit 0
+fi
+
 RESULT="$(nix-build "$NIXPKGS_PATH/nixos" \
   -A config.system.build.isoImage \
   -I "nixos-config=$CONFIG" \
