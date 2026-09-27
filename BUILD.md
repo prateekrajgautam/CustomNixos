@@ -1,7 +1,8 @@
 # Testing NixOS Live Images
 
-This directory builds two NixOS 26.05 Cinnamon live images:
+This directory builds three NixOS 26.05 Cinnamon live images:
 
+* **Testing Bare** — Cinnamon, networking, partitioning and core live/installer utilities.
 * **Testing Minimal** — graphical live environment, Calamares installer, GParted, browser and core utilities.
 * **Testing Full** — the same live/installer foundation plus the workstation package and service modules.
 
@@ -14,7 +15,8 @@ Both editions are configured for installation with networking disconnected:
 * Calamares does not check for or require internet connectivity.
 * The installer offers the supported **Cinnamon desktop** and **Basic system** targets only.
 * Complete BIOS and UEFI Cinnamon target closures are retained in each ISO; the Basic target is a subset of those closures.
-* Calamares runs with an empty Nix substituter list. Missing store paths therefore fail locally instead of being downloaded.
+* The privileged `nixos-install` process receives the exact pinned nixpkgs source path embedded in the ISO; it does not depend on a root channel being initialized first.
+* Calamares runs with an empty Nix substituter list. It may assemble the machine-specific system locally, but cannot obtain packages from a binary cache.
 * The selected edition profile is copied to `/etc/nixos/offline-profile.nix`. Full also copies its referenced modules to `/etc/modules`, so later `nixos-rebuild` evaluations remain valid.
 
 The embedded target closures increase image size. Do not remove `modules/offline-installer.nix` or replace it with only `channel.nix`: a channel contains Nix expressions, not the complete package closure needed for an offline installation.

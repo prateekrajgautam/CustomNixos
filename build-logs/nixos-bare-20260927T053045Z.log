@@ -1,0 +1,1027 @@
+[2026-09-27T05:37:15Z] Building NixOS Bare ISO
+Host:              Linux (non-NixOS, e.g. Ubuntu/WSL)
+Nix version:       nix (Nix) 2.26.1
+nixpkgs revision:  5e2305d577ca00acbba631b05cb1094d172b29f3  (nixos-26.05, pinned in nixpkgs-pin.json)
+nixpkgs path:      /nix/store/pgy8nq09hh4mdgr30ir9v0lcjpz34vxb-source
+Configuration:     /mnt/c/GITHUB/customnixosiso/iso-bare.nix
+Output directory:  /mnt/c/GITHUB/customnixosiso
+Log:               /mnt/c/GITHUB/customnixosiso/build-logs/nixos-bare-20260927T053045Z.log
+cores/max-jobs:    2 / 2
+these 61 derivations will be built:
+  /nix/store/a52a2sgyw70kmggd9w2f710b9m5i2frs-nixos-help.drv
+  /nix/store/8zhir1rj45qnk3all4qqkr7q8dizmw87-nixos-help.drv
+  /nix/store/7ib39xvnf0iglkl3gq34cimk7vza85cg-system-path.drv
+  /nix/store/0ra4dcghl9a2l120xkdgkaiqzqrvsbz7-X-Restart-Triggers-polkit.drv
+  /nix/store/fa0cbf9fczaa0ys523jrcc8f8q0xb5dx-dbus-1.drv
+  /nix/store/sfxlk6mr0f6h4zr3sc6wlklz1fvhyg39-X-Restart-Triggers-dbus-broker.drv
+  /nix/store/3g0pv0s7hd7apadjwznghy88vr1gxfv0-unit-dbus-broker.service.drv
+  /nix/store/1dmqfdngssdcplnb68lzvgzyhhqz5b8v-user-units.drv
+  /nix/store/hr11nmy4a6fmcazpsd254f1scr82iccp-linux-6.18.54-modules.drv
+  /nix/store/padfvkpbniq7f103nkrxm7qy3k1qndbi-system-path.drv
+  /nix/store/s1amqr8j68da447r7rdkgdhv60l14p8k-dbus-1.drv
+  /nix/store/qg6c8ap5hjxzid1qlbr4cbh3b00anqy5-X-Restart-Triggers-dbus-broker.drv
+  /nix/store/h1x1kzrls7a3qzwx6qppf3kxdwkqymhy-unit-dbus-broker.service.drv
+  /nix/store/ibn22gdmdwbs3r8kj2rm70ylgr8kr9zb-unit-accounts-daemon.service.drv
+  /nix/store/yj5l7p0sk10sc3hwsxhx2hfshmc6zd1k-X-Restart-Triggers-polkit.drv
+  /nix/store/j3wkfqpcgib14d9pcny4iaz2jnq2fw70-unit-polkit.service.drv
+  /nix/store/3z7qldpd408r94ir0g73i6qf4a3fj7g5-system-units.drv
+  /nix/store/f4kawvqim2praa5jzhxx4l22ywkrmlan-unit-dbus-broker.service.drv
+  /nix/store/b12qj5yb4ism73ng12pfm9fdphaj4hv8-user-units.drv
+  /nix/store/kl22xwhacr5hzmf0rsbrm4gf3maywhh4-etc.drv
+  /nix/store/k6lwnj4ljmjgxfwymvxy20xrb2lr5y26-activate.drv
+  /nix/store/n575dqiq1p1x5wdr10mh3pgs0nakizvy-linux-6.18.54-modules-shrunk.drv
+  /nix/store/x26xijxl55fgpaynyxm39b5m8q2z1248-initrd-linux-6.18.54.drv
+  /nix/store/kspgqjv3g2bw23xpqf143isq73l5y8cr-boot.json.drv
+  /nix/store/2sr5brl0klz507clzk9b76d8cljjnf1l-nixos-system-offline-install-seed-26.05pre-git.drv
+  /nix/store/dvf959sl7dv25kqvrc3f5saxx4rz6i56-system-path.drv
+  /nix/store/f19vl6zap4ikxxxls3z0c3h13zv52n9j-unit-accounts-daemon.service.drv
+  /nix/store/iiawdfq6lfm6z6snhizcajxj3k2fs9gj-X-Restart-Triggers-polkit.drv
+  /nix/store/il886aaa7hj636kks80ls0f4rz0g2kfg-unit-polkit.service.drv
+  /nix/store/i9yd4048p5pr3bmdhpm4vi9q7vafd44r-dbus-1.drv
+  /nix/store/ch9m2gd0k262g5rzf2vbwgl5c4b33ycf-X-Restart-Triggers-dbus-broker.drv
+  /nix/store/ll13l3n8la4fnxzgl9xs3arqv44d6fl9-unit-dbus-broker.service.drv
+  /nix/store/nvma5x1pk8ymddprdanfhhpscjw6w3ji-unit-script-nix-channel-init-start.drv
+  /nix/store/n1309vab33ix633wdi91s2b1cb0g2p79-unit-nix-channel-init.service.drv
+  /nix/store/9fc3c2zzia1ws71lm7va0k3dfwybzkxc-system-units.drv
+  /nix/store/h9cnnpjpfnnwapfz8svzbcm93dh42pk3-unit-dbus-broker.service.drv
+  /nix/store/bxw9ygqdfcfzd16kdq1vxnal61c0fkkf-user-units.drv
+  /nix/store/f5fiii1xjrv8lvfkjkb9w10c08z0nwcy-etc-nix-registry.json.drv
+  /nix/store/m8wf64f4r2l2g9v1vhnj08zy00m46s9p-system-shutdown.drv
+  /nix/store/p98bi5c2s02rk1cfhrcjnv7vab1vpi8h-user-generators.drv
+  /nix/store/vwxj4bqa8ym3ngif8mm00ls2pw0sad08-system-generators.drv
+  /nix/store/57ss8bn1cpva4jsanb4n08v45zvamfb2-etc.drv
+  /nix/store/4ivn7jx849dwvxapvpnf9rfgzwzwbvfh-activate.drv
+  /nix/store/hfi64p6nlz8i8n5igc28saaib2hj3fnl-linux-6.18.54-modules.drv
+  /nix/store/wkcc12drf2hhy4syvd021mq9valc392c-linux-6.18.54-modules-shrunk.drv
+  /nix/store/csi9i0wqnag7vq5kxfjkr0r4r55xjcyr-initrd-linux-6.18.54.drv
+  /nix/store/icdb6d64cqnl58i3ins2js1ynhjclmp9-boot.json.drv
+  /nix/store/84dsbbl59a12pr2s91zcx0gi4d00k0qn-boot.json.drv
+  /nix/store/q0jwm7ya3wryyjili8gn3k22qgvkalwd-unit-accounts-daemon.service.drv
+  /nix/store/x2aa2xh7al6iskc0g2fx876ndv6x0pxz-unit-polkit.service.drv
+  /nix/store/z6bcbpp0sx3mxvw5id2fp71k2pbwfgl5-unit-dbus-broker.service.drv
+  /nix/store/bxwzp665y0m9pmdhd653civbhf5wkkp8-system-units.drv
+  /nix/store/ic78mkn959j21pn930lrhiz3fblwf1g9-etc.drv
+  /nix/store/djnasb7777zrjgjxj44zz0jnsc9v9zyp-activate.drv
+  /nix/store/z4xyqna0f6dr8n99xsplprshfqw9dwls-nixos-system-offline-install-seed-26.05pre-git.drv
+  /nix/store/dwcdjy959vimiir2wiidy94hgl2cvwf6-nixos-system-nixos-bare-26.05pre-git.drv
+  /nix/store/7cqm5956mqdkn5xicfs6hflqpgz34w3l-closure-info.drv
+  /nix/store/wl4jjxqcdz7axahw0x1wgvcv0c3n2xxc-efi-directory.drv
+  /nix/store/bzkjnj5ms8lhjc54kpc7hfscjinw5fji-efi-image_eltorito.drv
+  /nix/store/mn2jv5gycpglgizrh1gd7fpm52r9z4m4-isolinux.cfg.drv
+  /nix/store/h16pniwj7mpl7c0xi6z31vl3zl427r3w-nixos-26.05pre-git-x86_64-linux.iso.drv
+these 10 paths will be fetched (201.44 MiB download, 396.10 MiB unpacked):
+  /nix/store/1rcxb1px4k62zvpf6cdp4j8dgqffdqhj-55-nixos-aslr-entropy.conf
+  /nix/store/9012894alk3yv48a603sxabfvdp81j8x-hyperv-daemons-6.18.54-bin
+  /nix/store/jx6pgdradd27sb6p57sxy811r63la2jm-hyperv-daemons-6.18.54-lib
+  /nix/store/a66bpsfasdcm688h7bdp43qfiiczdm8x-hyperv-daemons-bin-6.18.54
+  /nix/store/k0hdg2xzag606bm9mygmws3m73b7caxy-linux-6.18.54
+  /nix/store/q68r2y9m23xdbnj1c829g2ck05nz4z62-linux-6.18.54-modules
+  /nix/store/469cn0a1jfvcgbikxk8n1q3gdx3m8bn0-nixos-26.05pre-git
+  /nix/store/ycqzcql548pwpy2m9xnpr9469vgf3xg8-nixos-configuration-reference-manpage
+  /nix/store/swdm0pkh7rvg6g5nlsnkgk4dz83r0m1y-nixos-manual-html
+  /nix/store/avpkwwy2xzr52k2s8qqc1zlzqlm4b5nx-zfs-kernel-2.4.4-6.18.54
+copying path '/nix/store/k0hdg2xzag606bm9mygmws3m73b7caxy-linux-6.18.54' from 'https://cache.nixos.org'...
+copying path '/nix/store/1rcxb1px4k62zvpf6cdp4j8dgqffdqhj-55-nixos-aslr-entropy.conf' from 'https://cache.nixos.org'...
+copying path '/nix/store/swdm0pkh7rvg6g5nlsnkgk4dz83r0m1y-nixos-manual-html' from 'https://cache.nixos.org'...
+copying path '/nix/store/ycqzcql548pwpy2m9xnpr9469vgf3xg8-nixos-configuration-reference-manpage' from 'https://cache.nixos.org'...
+copying path '/nix/store/469cn0a1jfvcgbikxk8n1q3gdx3m8bn0-nixos-26.05pre-git' from 'https://cache.nixos.org'...
+copying path '/nix/store/avpkwwy2xzr52k2s8qqc1zlzqlm4b5nx-zfs-kernel-2.4.4-6.18.54' from 'https://cache.nixos.org'...
+copying path '/nix/store/a66bpsfasdcm688h7bdp43qfiiczdm8x-hyperv-daemons-bin-6.18.54' from 'https://cache.nixos.org'...
+copying path '/nix/store/9012894alk3yv48a603sxabfvdp81j8x-hyperv-daemons-6.18.54-bin' from 'https://cache.nixos.org'...
+copying path '/nix/store/jx6pgdradd27sb6p57sxy811r63la2jm-hyperv-daemons-6.18.54-lib' from 'https://cache.nixos.org'...
+building '/nix/store/vwxj4bqa8ym3ngif8mm00ls2pw0sad08-system-generators.drv'...
+building '/nix/store/m8wf64f4r2l2g9v1vhnj08zy00m46s9p-system-shutdown.drv'...
+building '/nix/store/p98bi5c2s02rk1cfhrcjnv7vab1vpi8h-user-generators.drv'...
+building '/nix/store/a52a2sgyw70kmggd9w2f710b9m5i2frs-nixos-help.drv'...
+building '/nix/store/8zhir1rj45qnk3all4qqkr7q8dizmw87-nixos-help.drv'...
+building '/nix/store/7ib39xvnf0iglkl3gq34cimk7vza85cg-system-path.drv'...
+building '/nix/store/dvf959sl7dv25kqvrc3f5saxx4rz6i56-system-path.drv'...
+structuredAttrs is enabled
+structuredAttrs is enabled
+pkgs.buildEnv warning: creating dangling symlink `/nix/store/nl2j26sdmv5rabwb91dc6sf2m3zh6wcc-system-path//etc/xdg/xdg-default.desktop' -> `/nix/store/933h9xdr426bs6j17h6q3f2wh9xdz0w8-mint-artwork-1.9.3/etc/xdg/xdg-default.desktop' -> `/usr/share/mint-artwork/xfce'
+pkgs.buildEnv warning: creating dangling symlink `/nix/store/nl2j26sdmv5rabwb91dc6sf2m3zh6wcc-system-path//etc/xdg/xdg-xfce' -> `/nix/store/933h9xdr426bs6j17h6q3f2wh9xdz0w8-mint-artwork-1.9.3/etc/xdg/xdg-xfce' -> `/usr/share/mint-artwork/xfce'
+pkgs.buildEnv warning: creating dangling symlink `/nix/store/qc0awb7rylfkq98ra46hiql1nmigwm4a-system-path//etc/xdg/xdg-default.desktop' -> `/nix/store/933h9xdr426bs6j17h6q3f2wh9xdz0w8-mint-artwork-1.9.3/etc/xdg/xdg-default.desktop' -> `/usr/share/mint-artwork/xfce'
+pkgs.buildEnv warning: creating dangling symlink `/nix/store/qc0awb7rylfkq98ra46hiql1nmigwm4a-system-path//etc/xdg/xdg-xfce' -> `/nix/store/933h9xdr426bs6j17h6q3f2wh9xdz0w8-mint-artwork-1.9.3/etc/xdg/xdg-xfce' -> `/usr/share/mint-artwork/xfce'
+pkgs.buildEnv warning: creating dangling symlink `/nix/store/qc0awb7rylfkq98ra46hiql1nmigwm4a-system-path//etc/xdg/xdg-default' -> `/nix/store/933h9xdr426bs6j17h6q3f2wh9xdz0w8-mint-artwork-1.9.3/etc/xdg/xdg-default' -> `/usr/share/mint-artwork/xfce'
+pkgs.buildEnv warning: creating dangling symlink `/nix/store/nl2j26sdmv5rabwb91dc6sf2m3zh6wcc-system-path//etc/xdg/xdg-default' -> `/nix/store/933h9xdr426bs6j17h6q3f2wh9xdz0w8-mint-artwork-1.9.3/etc/xdg/xdg-default' -> `/usr/share/mint-artwork/xfce'
+created 16201 symlinks in user environment
+install-info: warning: no info dir entry in `/nix/store/nl2j26sdmv5rabwb91dc6sf2m3zh6wcc-system-path/share/info/gawknotes.info'
+created 17880 symlinks in user environment
+install-info: warning: no info dir entry in `/nix/store/qc0awb7rylfkq98ra46hiql1nmigwm4a-system-path/share/info/gawknotes.info'
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+building '/nix/store/padfvkpbniq7f103nkrxm7qy3k1qndbi-system-path.drv'...
+building '/nix/store/iiawdfq6lfm6z6snhizcajxj3k2fs9gj-X-Restart-Triggers-polkit.drv'...
+structuredAttrs is enabled
+pkgs.buildEnv warning: creating dangling symlink `/nix/store/nwqiqbd0fqplyx1qjzxabyjrfg77n6qq-system-path//etc/xdg/xdg-default.desktop' -> `/nix/store/933h9xdr426bs6j17h6q3f2wh9xdz0w8-mint-artwork-1.9.3/etc/xdg/xdg-default.desktop' -> `/usr/share/mint-artwork/xfce'
+pkgs.buildEnv warning: creating dangling symlink `/nix/store/nwqiqbd0fqplyx1qjzxabyjrfg77n6qq-system-path//etc/xdg/xdg-xfce' -> `/nix/store/933h9xdr426bs6j17h6q3f2wh9xdz0w8-mint-artwork-1.9.3/etc/xdg/xdg-xfce' -> `/usr/share/mint-artwork/xfce'
+pkgs.buildEnv warning: creating dangling symlink `/nix/store/nwqiqbd0fqplyx1qjzxabyjrfg77n6qq-system-path//etc/xdg/xdg-default' -> `/nix/store/933h9xdr426bs6j17h6q3f2wh9xdz0w8-mint-artwork-1.9.3/etc/xdg/xdg-default' -> `/usr/share/mint-artwork/xfce'
+building '/nix/store/0ra4dcghl9a2l120xkdgkaiqzqrvsbz7-X-Restart-Triggers-polkit.drv'...
+building '/nix/store/fa0cbf9fczaa0ys523jrcc8f8q0xb5dx-dbus-1.drv'...
+building '/nix/store/i9yd4048p5pr3bmdhpm4vi9q7vafd44r-dbus-1.drv'...
+building '/nix/store/sfxlk6mr0f6h4zr3sc6wlklz1fvhyg39-X-Restart-Triggers-dbus-broker.drv'...
+building '/nix/store/ch9m2gd0k262g5rzf2vbwgl5c4b33ycf-X-Restart-Triggers-dbus-broker.drv'...
+building '/nix/store/f19vl6zap4ikxxxls3z0c3h13zv52n9j-unit-accounts-daemon.service.drv'...
+created 16074 symlinks in user environment
+install-info: warning: no info dir entry in `/nix/store/nwqiqbd0fqplyx1qjzxabyjrfg77n6qq-system-path/share/info/gawknotes.info'
+building '/nix/store/q0jwm7ya3wryyjili8gn3k22qgvkalwd-unit-accounts-daemon.service.drv'...
+building '/nix/store/3g0pv0s7hd7apadjwznghy88vr1gxfv0-unit-dbus-broker.service.drv'...
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+building '/nix/store/h9cnnpjpfnnwapfz8svzbcm93dh42pk3-unit-dbus-broker.service.drv'...
+building '/nix/store/yj5l7p0sk10sc3hwsxhx2hfshmc6zd1k-X-Restart-Triggers-polkit.drv'...
+building '/nix/store/s1amqr8j68da447r7rdkgdhv60l14p8k-dbus-1.drv'...
+building '/nix/store/ibn22gdmdwbs3r8kj2rm70ylgr8kr9zb-unit-accounts-daemon.service.drv'...
+building '/nix/store/ll13l3n8la4fnxzgl9xs3arqv44d6fl9-unit-dbus-broker.service.drv'...
+building '/nix/store/qg6c8ap5hjxzid1qlbr4cbh3b00anqy5-X-Restart-Triggers-dbus-broker.drv'...
+building '/nix/store/z6bcbpp0sx3mxvw5id2fp71k2pbwfgl5-unit-dbus-broker.service.drv'...
+building '/nix/store/il886aaa7hj636kks80ls0f4rz0g2kfg-unit-polkit.service.drv'...
+building '/nix/store/f4kawvqim2praa5jzhxx4l22ywkrmlan-unit-dbus-broker.service.drv'...
+building '/nix/store/h1x1kzrls7a3qzwx6qppf3kxdwkqymhy-unit-dbus-broker.service.drv'...
+building '/nix/store/j3wkfqpcgib14d9pcny4iaz2jnq2fw70-unit-polkit.service.drv'...
+building '/nix/store/x2aa2xh7al6iskc0g2fx876ndv6x0pxz-unit-polkit.service.drv'...
+building '/nix/store/1dmqfdngssdcplnb68lzvgzyhhqz5b8v-user-units.drv'...
+building '/nix/store/3z7qldpd408r94ir0g73i6qf4a3fj7g5-system-units.drv'...
+building '/nix/store/bxwzp665y0m9pmdhd653civbhf5wkkp8-system-units.drv'...
+building '/nix/store/b12qj5yb4ism73ng12pfm9fdphaj4hv8-user-units.drv'...
+building '/nix/store/bxw9ygqdfcfzd16kdq1vxnal61c0fkkf-user-units.drv'...
+building '/nix/store/ic78mkn959j21pn930lrhiz3fblwf1g9-etc.drv'...
+building '/nix/store/kl22xwhacr5hzmf0rsbrm4gf3maywhh4-etc.drv'...
+building '/nix/store/djnasb7777zrjgjxj44zz0jnsc9v9zyp-activate.drv'...
+building '/nix/store/k6lwnj4ljmjgxfwymvxy20xrb2lr5y26-activate.drv'...
+copying path '/nix/store/q68r2y9m23xdbnj1c829g2ck05nz4z62-linux-6.18.54-modules' from 'https://cache.nixos.org'...
+building '/nix/store/f5fiii1xjrv8lvfkjkb9w10c08z0nwcy-etc-nix-registry.json.drv'...
+building '/nix/store/nvma5x1pk8ymddprdanfhhpscjw6w3ji-unit-script-nix-channel-init-start.drv'...
+building '/nix/store/n1309vab33ix633wdi91s2b1cb0g2p79-unit-nix-channel-init.service.drv'...
+building '/nix/store/9fc3c2zzia1ws71lm7va0k3dfwybzkxc-system-units.drv'...
+building '/nix/store/57ss8bn1cpva4jsanb4n08v45zvamfb2-etc.drv'...
+building '/nix/store/4ivn7jx849dwvxapvpnf9rfgzwzwbvfh-activate.drv'...
+building '/nix/store/hfi64p6nlz8i8n5igc28saaib2hj3fnl-linux-6.18.54-modules.drv'...
+building '/nix/store/hr11nmy4a6fmcazpsd254f1scr82iccp-linux-6.18.54-modules.drv'...
+structuredAttrs is enabled
+structuredAttrs is enabled
+created 16 symlinks in user environment
+structuredAttrs is enabled
+created 1 symlinks in user environment
+structuredAttrs is enabled
+kernel version is 6.18.54
+kernel version is 6.18.54
+building '/nix/store/n575dqiq1p1x5wdr10mh3pgs0nakizvy-linux-6.18.54-modules-shrunk.drv'...
+kernel version is 6.18.54
+root module: ahci
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libahci.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/ahci.ko.xz
+root module: ata_piix
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/ata_piix.ko.xz
+root module: atkbd
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/vivaldi-fmap.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/serio/serio.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/serio/libps2.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/keyboard/atkbd.ko.xz
+root module: autofs
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/autofs/autofs4.ko.xz
+root module: efivarfs
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/efivarfs/efivarfs.ko.xz
+root module: ehci_hcd
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ehci-hcd.ko.xz
+root module: ehci_pci
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ehci-hcd.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ehci-pci.ko.xz
+root module: ext2
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/mbcache.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/ext2/ext2.ko.xz
+root module: ext4
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/jbd2/jbd2.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/mbcache.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/lib/crc/crc16.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/ext4/ext4.ko.xz
+root module: hid_apple
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/leds/led-class.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-apple.ko.xz
+root module: hid_cherry
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-cherry.ko.xz
+root module: hid_corsair
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/leds/led-class.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/usbhid/usbhid.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-corsair.ko.xz
+root module: hid_generic
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-generic.ko.xz
+root module: hid_lenovo
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/leds/led-class.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-lenovo.ko.xz
+root module: hid_logitech_dj
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/usbhid/usbhid.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-logitech-dj.ko.xz
+root module: hid_logitech_hidpp
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/usbhid/usbhid.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-logitech-hidpp.ko.xz
+root module: hid_microsoft
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/ff-memless.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-microsoft.ko.xz
+root module: hid_roccat
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-roccat.ko.xz
+root module: i8042
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/serio/serio.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/serio/i8042.ko.xz
+root module: mmc_block
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/mmc/core/mmc_core.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/misc/rpmb-core.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/mmc/core/mmc_block.ko.xz
+root module: nvme
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/crypto/hkdf.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/nvme/common/nvme-auth.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/nvme/common/nvme-keyring.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/nvme/host/nvme-core.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/nvme/host/nvme.ko.xz
+root module: ohci_hcd
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ohci-hcd.ko.xz
+root module: ohci_pci
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ohci-hcd.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ehci-hcd.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ehci-pci.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ohci-pci.ko.xz
+root module: pata_marvell
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_marvell.ko.xz
+root module: pcips2
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/serio/serio.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/serio/pcips2.ko.xz
+root module: sata_nv
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/sata_nv.ko.xz
+root module: sata_sis
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_sis.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/sata_sis.ko.xz
+root module: sata_uli
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/sata_uli.ko.xz
+root module: sata_via
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/sata_via.ko.xz
+root module: sd_mod
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/sd_mod.ko.xz
+root module: sr_mod
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/cdrom/cdrom.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/sr_mod.ko.xz
+root module: tpm-crb
+  builtin dependency: tpm_crb
+root module: tpm-tis
+  builtin dependency: tpm_tis
+root module: uhci_hcd
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ehci-hcd.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ehci-pci.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/uhci-hcd.ko.xz
+root module: usbhid
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/usbhid/usbhid.ko.xz
+root module: xhci_hcd
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/xhci-hcd.ko.xz
+root module: xhci_pci
+  dependency already copied: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/xhci-hcd.ko.xz
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/xhci-pci.ko.xz
+root module: dm_mod
+  copying dependency: /nix/store/ry2ds2nrcb94skc826mijjcvfpsmz3kb-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/md/dm-mod.ko.xz
+lib/firmware/edid not found, skipping.
+building '/nix/store/x26xijxl55fgpaynyxm39b5m8q2z1248-initrd-linux-6.18.54.drv'...
+structuredAttrs is enabled
+/bin -> /nix/store/y6qx04fwqsch5011hbyb3x4pddag97cl-initrd-bin-env/bin
+/etc/dbus-1 -> /nix/store/ssrqbhrwn4g2zrhh7i7xwkf6rp8dfn8j-dbus-1
+/etc/group -> /nix/store/paifapz49qcxbzkmkhrcvzdfpkikz8pf-initrd-group
+/etc/hostname -> /nix/store/9xm5fvdn6fj56087561amlh6gk3av48f-initrd-hostname
+/etc/initrd-release -> /nix/store/1vczfchd9x5rpp02s3p05c39ybyiyi90-initrd-release
+/etc/kbd/keymaps -> /nix/store/ic4wlczmfz91ny4xn9c71rymydd0al1j-console-env/share/keymaps
+/etc/modprobe.d/debian.conf -> /nix/store/11i63hjwbylp9ivwa4ylk9cx2kdczl0c-kmod-debian-aliases.conf-30+20230601-2
+/etc/modprobe.d/nixos.conf -> /nix/store/3596cqn1jqhz20ki30hyg10zi4m9pnfd-etc-modprobe.d-nixos.conf
+/etc/modprobe.d/systemd.conf -> /nix/store/b4b1x5fhxpc78qlclj3kdbl9dd49g917-systemd-260.4/lib/modprobe.d/systemd.conf
+/etc/modprobe.d/ubuntu.conf -> /nix/store/fci0ml2wnyi96yf9q0vqy50rma0ccx4d-kmod-blacklist-31+20240202-2ubuntu8/modprobe.conf
+/etc/modules-load.d/nixos.conf -> /nix/store/fsl91n9wfdwq26wymph8y4xhcq1acimf-initrd-nixos.conf
+/etc/os-release -> /nix/store/1vczfchd9x5rpp02s3p05c39ybyiyi90-initrd-release
+/etc/passwd -> /nix/store/plxkxgr908zq7vmr5ln4006wcqapmcdj-initrd-passwd
+/etc/shadow -> /nix/store/00x36ijn5lhrsp9rwz4xainvhkfdjbzr-initrd-shadow
+/etc/shells -> /nix/store/f87kp62m93ffp5x1pzmcw3cfg1cbkcwn-initrd-shells
+/etc/sysctl.d/nixos.conf -> /nix/store/zy0qq3hql582spw68x2fwpc1f0hyw0yd-initrd-nixos.conf
+/etc/systemd/system -> /nix/store/ry6ss2hlxdrfdxm2x6z5a90n0zsx8m6g-initrd-units
+/etc/systemd/system.conf -> /nix/store/60b342m3syj50d605fhp6skvmg66a7a9-initrd-system.conf
+/etc/terminfo/l/linux -> /nix/store/97xgq8dwpmcadv42038lkkrnrjfy180a-ncurses-6.6/share/terminfo/l/linux
+/etc/terminfo/v/vt100 -> /nix/store/97xgq8dwpmcadv42038lkkrnrjfy180a-ncurses-6.6/share/terminfo/v/vt100
+/etc/terminfo/v/vt102 -> /nix/store/97xgq8dwpmcadv42038lkkrnrjfy180a-ncurses-6.6/share/terminfo/v/vt102
+/etc/terminfo/v/vt220 -> /nix/store/97xgq8dwpmcadv42038lkkrnrjfy180a-ncurses-6.6/share/terminfo/v/vt220
+/etc/udev/rules.d -> /nix/store/lhx0n845i0fafwv88ncmjj168psnnxkk-initrd-udev-rules
+/etc/vconsole.conf -> /nix/store/51b4vdqrwjh5b0i78kbxgl32jnf2zsin-vconsole.conf
+/init -> /nix/store/b4b1x5fhxpc78qlclj3kdbl9dd49g917-systemd-260.4/lib/systemd/systemd
+/lib -> /nix/store/fj71xq57rn04d24r3ydy3zch2mr7sakr-linux-6.18.54-modules-shrunk/lib
+/sbin -> /nix/store/y6qx04fwqsch5011hbyb3x4pddag97cl-initrd-bin-env/sbin
+/usr/bin -> /nix/store/y6qx04fwqsch5011hbyb3x4pddag97cl-initrd-bin-env/bin
+/usr/sbin -> /nix/store/y6qx04fwqsch5011hbyb3x4pddag97cl-initrd-bin-env/sbin
+Warning: Couldn't satisfy dependency libcrypt.so.1 for "/nix/store/b4b1x5fhxpc78qlclj3kdbl9dd49g917-systemd-260.4/lib/systemd/libsystemd-shared-260.so"
+Warning: Couldn't satisfy dependency libcrypt.so.1.1 for "/nix/store/b4b1x5fhxpc78qlclj3kdbl9dd49g917-systemd-260.4/lib/systemd/libsystemd-shared-260.so"
+building '/nix/store/84dsbbl59a12pr2s91zcx0gi4d00k0qn-boot.json.drv'...
+building '/nix/store/kspgqjv3g2bw23xpqf143isq73l5y8cr-boot.json.drv'...
+building '/nix/store/z4xyqna0f6dr8n99xsplprshfqw9dwls-nixos-system-offline-install-seed-26.05pre-git.drv'...
+structuredAttrs is enabled
+building '/nix/store/2sr5brl0klz507clzk9b76d8cljjnf1l-nixos-system-offline-install-seed-26.05pre-git.drv'...
+structuredAttrs is enabled
+building '/nix/store/wkcc12drf2hhy4syvd021mq9valc392c-linux-6.18.54-modules-shrunk.drv'...
+kernel version is 6.18.54
+root module: 3w-9xxx
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/3w-9xxx.ko.xz
+root module: 3w-xxxx
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/3w-xxxx.ko.xz
+root module: ahci
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libahci.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/ahci.ko.xz
+root module: aic79xx
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_transport_spi.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/aic7xxx/aic79xx.ko.xz
+root module: aic7xxx
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_transport_spi.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/aic7xxx/aic7xxx.ko.xz
+root module: arcmsr
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/arcmsr/arcmsr.ko.xz
+root module: ata_piix
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/ata_piix.ko.xz
+root module: atkbd
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/vivaldi-fmap.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/serio/serio.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/serio/libps2.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/keyboard/atkbd.ko.xz
+root module: autofs
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/autofs/autofs4.ko.xz
+root module: efivarfs
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/efivarfs/efivarfs.ko.xz
+root module: ehci_hcd
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ehci-hcd.ko.xz
+root module: ehci_pci
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ehci-hcd.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ehci-pci.ko.xz
+root module: hid_apple
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/leds/led-class.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-apple.ko.xz
+root module: hid_cherry
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-cherry.ko.xz
+root module: hid_corsair
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/leds/led-class.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/usbhid/usbhid.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-corsair.ko.xz
+root module: hid_generic
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-generic.ko.xz
+root module: hid_lenovo
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/leds/led-class.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-lenovo.ko.xz
+root module: hid_logitech_dj
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/usbhid/usbhid.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-logitech-dj.ko.xz
+root module: hid_logitech_hidpp
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/usbhid/usbhid.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-logitech-hidpp.ko.xz
+root module: hid_microsoft
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/ff-memless.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-microsoft.ko.xz
+root module: hid_roccat
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid-roccat.ko.xz
+root module: hpsa
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_transport_sas.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/hpsa.ko.xz
+root module: hv_storvsc
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hv/hv_vmbus.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_transport_fc.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/hv_storvsc.ko.xz
+root module: hyperv_keyboard
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hv/hv_vmbus.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/serio/serio.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/serio/hyperv-keyboard.ko.xz
+root module: i8042
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/serio/serio.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/serio/i8042.ko.xz
+root module: iso9660
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/cdrom/cdrom.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/isofs/isofs.ko.xz
+root module: md_mod
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/md/md-mod.ko.xz
+root module: mmc_block
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/mmc/core/mmc_core.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/misc/rpmb-core.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/mmc/core/mmc_block.ko.xz
+root module: mptspi
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_transport_spi.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/message/fusion/mptbase.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/message/fusion/mptscsih.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/message/fusion/mptspi.ko.xz
+root module: nvme
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/crypto/hkdf.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/nvme/common/nvme-auth.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/nvme/common/nvme-keyring.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/nvme/host/nvme-core.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/nvme/host/nvme.ko.xz
+root module: ohci1394
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/lib/crc/crc-itu-t.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/firewire/firewire-core.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/firewire/firewire-ohci.ko.xz
+root module: ohci_hcd
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ohci-hcd.ko.xz
+root module: ohci_pci
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ohci-hcd.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ehci-hcd.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ehci-pci.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ohci-pci.ko.xz
+root module: overlay
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/overlayfs/overlay.ko.xz
+root module: pata_ali
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_ali.ko.xz
+root module: pata_amd
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_amd.ko.xz
+root module: pata_artop
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_artop.ko.xz
+root module: pata_atiixp
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_atiixp.ko.xz
+root module: pata_efar
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_efar.ko.xz
+root module: pata_hpt366
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_hpt366.ko.xz
+root module: pata_hpt37x
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_hpt37x.ko.xz
+root module: pata_hpt3x2n
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_hpt3x2n.ko.xz
+root module: pata_hpt3x3
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_hpt3x3.ko.xz
+root module: pata_it8213
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_it8213.ko.xz
+root module: pata_it821x
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_it821x.ko.xz
+root module: pata_jmicron
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_jmicron.ko.xz
+root module: pata_marvell
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_marvell.ko.xz
+root module: pata_mpiix
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_mpiix.ko.xz
+root module: pata_netcell
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_netcell.ko.xz
+root module: pata_ns87410
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_ns87410.ko.xz
+root module: pata_oldpiix
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_oldpiix.ko.xz
+root module: pata_pcmcia
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/pcmcia/pcmcia_core.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/pcmcia/pcmcia.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_pcmcia.ko.xz
+root module: pata_pdc2027x
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_pdc2027x.ko.xz
+root module: pata_qdi
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_legacy.ko.xz
+root module: pata_rz1000
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_rz1000.ko.xz
+root module: pata_serverworks
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_serverworks.ko.xz
+root module: pata_sil680
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_sil680.ko.xz
+root module: pata_sis
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_sis.ko.xz
+root module: pata_sl82c105
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_sl82c105.ko.xz
+root module: pata_triflex
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_triflex.ko.xz
+root module: pata_via
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_via.ko.xz
+root module: pata_winbond
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_legacy.ko.xz
+root module: pcips2
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/serio/serio.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/input/serio/pcips2.ko.xz
+root module: raid0
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/md/md-mod.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/md/raid0.ko.xz
+root module: raid1
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/md/md-mod.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/md/raid1.ko.xz
+root module: raid10
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/md/md-mod.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/md/raid10.ko.xz
+root module: raid456
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/lib/raid6/raid6_pq.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/crypto/xor.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/md/md-mod.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/crypto/async_tx/async_tx.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/crypto/async_tx/async_xor.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/crypto/async_tx/async_pq.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/crypto/async_tx/async_memcpy.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/crypto/async_tx/async_raid6_recov.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/md/raid456.ko.xz
+root module: sata_inic162x
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/sata_inic162x.ko.xz
+root module: sata_nv
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/sata_nv.ko.xz
+root module: sata_promise
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/sata_promise.ko.xz
+root module: sata_qstor
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/sata_qstor.ko.xz
+root module: sata_sil
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/sata_sil.ko.xz
+root module: sata_sil24
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/sata_sil24.ko.xz
+root module: sata_sis
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/pata_sis.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/sata_sis.ko.xz
+root module: sata_svw
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/sata_svw.ko.xz
+root module: sata_sx4
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/sata_sx4.ko.xz
+root module: sata_uli
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/sata_uli.ko.xz
+root module: sata_via
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/sata_via.ko.xz
+root module: sata_vsc
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/libata.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ata/sata_vsc.ko.xz
+root module: sbp2
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/lib/crc/crc-itu-t.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/firewire/firewire-core.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/firewire/firewire-sbp2.ko.xz
+root module: sd_mod
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/sd_mod.ko.xz
+root module: sdhci_pci
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/leds/led-class.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/mmc/core/mmc_core.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/mmc/host/cqhci.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/mmc/host/sdhci.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/mmc/host/sdhci-uhs2.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/mmc/host/sdhci-pci.ko.xz
+root module: squashfs
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/squashfs/squashfs.ko.xz
+root module: sr_mod
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/cdrom/cdrom.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/sr_mod.ko.xz
+root module: tpm-crb
+  builtin dependency: tpm_crb
+root module: tpm-tis
+  builtin dependency: tpm_tis
+root module: uas
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/storage/usb-storage.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/storage/uas.ko.xz
+root module: uhci_hcd
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ehci-hcd.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/ehci-pci.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/uhci-hcd.ko.xz
+root module: usbhid
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/hid.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hid/usbhid/usbhid.ko.xz
+root module: virtio_balloon
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio_ring.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio_balloon.ko.xz
+root module: virtio_blk
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio_ring.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/block/virtio_blk.ko.xz
+root module: virtio_console
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio_ring.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/char/virtio_console.ko.xz
+root module: virtio_mmio
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio_ring.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio_mmio.ko.xz
+root module: virtio_net
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio_ring.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/net/core/failover.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/net/net_failover.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/net/virtio_net.ko.xz
+root module: virtio_pci
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio_ring.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio_pci_modern_dev.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio_pci_legacy_dev.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio_pci.ko.xz
+root module: virtio_scsi
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio_ring.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/virtio/virtio.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/virtio_scsi.ko.xz
+root module: vmw_balloon
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/misc/vmw_vmci/vmw_vmci.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/misc/vmw_balloon.ko.xz
+root module: vmw_vmci
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/misc/vmw_vmci/vmw_vmci.ko.xz
+root module: vmw_vsock_vmci_transport
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/misc/vmw_vmci/vmw_vmci.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/net/vmw_vsock/vsock.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/net/vmw_vsock/vmw_vsock_vmci_transport.ko.xz
+root module: vmwgfx
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/gpu/drm/ttm/ttm.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/gpu/drm/drm_ttm_helper.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/gpu/drm/vmwgfx/vmwgfx.ko.xz
+root module: vmxnet3
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/net/vmxnet3/vmxnet3.ko.xz
+root module: vsock
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/net/vmw_vsock/vsock.ko.xz
+root module: xhci_hcd
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/xhci-hcd.ko.xz
+root module: xhci_pci
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/xhci-hcd.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/usb/host/xhci-pci.ko.xz
+root module: dm_mod
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/md/dm-mod.ko.xz
+root module: hv_balloon
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hv/hv_vmbus.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hv/hv_balloon.ko.xz
+root module: hv_netvsc
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hv/hv_vmbus.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/net/hyperv/hv_netvsc.ko.xz
+root module: hv_storvsc
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hv/hv_vmbus.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_transport_fc.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/hv_storvsc.ko.xz
+root module: hv_utils
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hv/hv_vmbus.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/pps/pps_core.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/ptp/ptp.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hv/hv_utils.ko.xz
+root module: hv_vmbus
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/hv/hv_vmbus.ko.xz
+root module: loop
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/block/loop.ko.xz
+root module: nls_cp437
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/nls/nls_cp437.ko.xz
+root module: nls_iso8859-1
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/nls/nls_iso8859-1.ko.xz
+root module: overlay
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/overlayfs/overlay.ko.xz
+root module: vfat
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/fat/fat.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/fs/fat/vfat.ko.xz
+root module: vmw_pvscsi
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_common.ko.xz
+  dependency already copied: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/scsi_mod.ko.xz
+  copying dependency: /nix/store/jx2c4lfkd2y2gwckwq19vrw60gjjgn1l-linux-6.18.54-modules/lib/modules/6.18.54/kernel/drivers/scsi/vmw_pvscsi.ko.xz
+lib/firmware/edid not found, skipping.
+building '/nix/store/csi9i0wqnag7vq5kxfjkr0r4r55xjcyr-initrd-linux-6.18.54.drv'...
+structuredAttrs is enabled
+/bin -> /nix/store/60g4bydddr3w5scvhi75mdf6xm587il0-initrd-bin-env/bin
+/etc/dbus-1 -> /nix/store/ssrqbhrwn4g2zrhh7i7xwkf6rp8dfn8j-dbus-1
+/etc/fonts/fonts.conf -> /nix/store/061f0sq3a0f75havmrx5qbysqjq8m64v-initrd-fonts.conf
+/etc/group -> /nix/store/paifapz49qcxbzkmkhrcvzdfpkikz8pf-initrd-group
+/etc/hostid -> /nix/store/q7a2zv422pklzlzvl4s2lq77vy25cv8q-gen-hostid
+/etc/hostname -> /nix/store/630kmrxhira134gkcd3f0jki36w82axj-initrd-hostname
+/etc/initrd-release -> /nix/store/h3kbapgrgb9r8v7mv9x3jlajrwrq5xiq-initrd-release
+/etc/kbd/keymaps -> /nix/store/a6w4gsrjwzpjn4pdzc3sg20ljarad2p2-console-env/share/keymaps
+/etc/mdadm.conf -> /nix/store/qrvjd1hi6gna4ag7a0zdkg9h7c7pbnph-initrd-mdadm.conf
+/etc/modprobe.d/debian.conf -> /nix/store/11i63hjwbylp9ivwa4ylk9cx2kdczl0c-kmod-debian-aliases.conf-30+20230601-2
+/etc/modprobe.d/nixos.conf -> /nix/store/3596cqn1jqhz20ki30hyg10zi4m9pnfd-etc-modprobe.d-nixos.conf
+/etc/modprobe.d/systemd.conf -> /nix/store/b4b1x5fhxpc78qlclj3kdbl9dd49g917-systemd-260.4/lib/modprobe.d/systemd.conf
+/etc/modprobe.d/ubuntu.conf -> /nix/store/fci0ml2wnyi96yf9q0vqy50rma0ccx4d-kmod-blacklist-31+20240202-2ubuntu8/modprobe.conf
+/etc/modules-load.d/nixos.conf -> /nix/store/7g61x1fsx1ci5rvcblfnymvmn9q1r3zz-initrd-nixos.conf
+/etc/os-release -> /nix/store/h3kbapgrgb9r8v7mv9x3jlajrwrq5xiq-initrd-release
+/etc/passwd -> /nix/store/plxkxgr908zq7vmr5ln4006wcqapmcdj-initrd-passwd
+/etc/plymouth/fonts -> /nix/store/b8qingl92zdarl6jlymvmwmghx97ad0b-plymouth-initrd-fonts
+/etc/plymouth/logo.png -> /nix/store/v9l2xhbcl5f0gc1npcvv3gi6bz9616vk-nixos-icons-0-unstable-2025-06-28/share/icons/hicolor/48x48/apps/nix-snowflake-white.png
+/etc/plymouth/plugins -> /nix/store/knhhkh7lfqvx63nahwzahvm0bhwqh5da-plymouth-initrd-plugins
+/etc/plymouth/plymouthd.conf -> /nix/store/fz2mf45fzky07jzdkxv2nf2pix2j26br-plymouthd.conf
+/etc/plymouth/plymouthd.defaults -> /nix/store/3dhnbjdckvh1yx9qjbrdja5j1zp5vklq-plymouth-26.134.222/share/plymouth/plymouthd.defaults
+/etc/plymouth/themes -> /nix/store/rpvv19pgk24qdqg3kvd89kvrhf192m24-plymouth-initrd-themes
+/etc/shadow -> /nix/store/hfa0nrs108lm948jcv2d7drssxafpvwh-initrd-shadow
+/etc/shells -> /nix/store/f87kp62m93ffp5x1pzmcw3cfg1cbkcwn-initrd-shells
+/etc/sysctl.d/nixos.conf -> /nix/store/zy0qq3hql582spw68x2fwpc1f0hyw0yd-initrd-nixos.conf
+/etc/systemd/system -> /nix/store/j42c2cdxr3ncyvf76347r36476z7mz6z-initrd-units
+/etc/systemd/system.conf -> /nix/store/ck05gfs4vnq95jhm99f3sqjz8l3lhfdv-initrd-system.conf
+/etc/terminfo/l/linux -> /nix/store/97xgq8dwpmcadv42038lkkrnrjfy180a-ncurses-6.6/share/terminfo/l/linux
+/etc/terminfo/v/vt100 -> /nix/store/97xgq8dwpmcadv42038lkkrnrjfy180a-ncurses-6.6/share/terminfo/v/vt100
+/etc/terminfo/v/vt102 -> /nix/store/97xgq8dwpmcadv42038lkkrnrjfy180a-ncurses-6.6/share/terminfo/v/vt102
+/etc/terminfo/v/vt220 -> /nix/store/97xgq8dwpmcadv42038lkkrnrjfy180a-ncurses-6.6/share/terminfo/v/vt220
+/etc/udev/rules.d -> /nix/store/nrr8w3z3g1iwqrzh81lxd2xcp0sla4gy-initrd-udev-rules
+/etc/vconsole.conf -> /nix/store/51b4vdqrwjh5b0i78kbxgl32jnf2zsin-vconsole.conf
+/init -> /nix/store/b4b1x5fhxpc78qlclj3kdbl9dd49g917-systemd-260.4/lib/systemd/systemd
+/lib -> /nix/store/glzxk5l7fb0pbi5361v55dind4gg23ch-linux-6.18.54-modules-shrunk/lib
+/sbin -> /nix/store/60g4bydddr3w5scvhi75mdf6xm587il0-initrd-bin-env/sbin
+/usr/bin -> /nix/store/60g4bydddr3w5scvhi75mdf6xm587il0-initrd-bin-env/bin
+/usr/sbin -> /nix/store/60g4bydddr3w5scvhi75mdf6xm587il0-initrd-bin-env/sbin
+Warning: Couldn't satisfy dependency libcrypt.so.1 for "/nix/store/b4b1x5fhxpc78qlclj3kdbl9dd49g917-systemd-260.4/lib/systemd/libsystemd-shared-260.so"
+Warning: Couldn't satisfy dependency libcrypt.so.1.1 for "/nix/store/b4b1x5fhxpc78qlclj3kdbl9dd49g917-systemd-260.4/lib/systemd/libsystemd-shared-260.so"
+building '/nix/store/icdb6d64cqnl58i3ins2js1ynhjclmp9-boot.json.drv'...
+building '/nix/store/dwcdjy959vimiir2wiidy94hgl2cvwf6-nixos-system-nixos-bare-26.05pre-git.drv'...
+structuredAttrs is enabled
+building '/nix/store/7cqm5956mqdkn5xicfs6hflqpgz34w3l-closure-info.drv'...
+building '/nix/store/wl4jjxqcdz7axahw0x1wgvcv0c3n2xxc-efi-directory.drv'...
+structuredAttrs is enabled
+building '/nix/store/mn2jv5gycpglgizrh1gd7fpm52r9z4m4-isolinux.cfg.drv'...
+Building GRUB with modules:
+ - fat
+ - iso9660
+ - part_gpt
+ - part_msdos
+ - normal
+ - boot
+ - linux
+ - configfile
+ - loopback
+ - chain
+ - halt
+ - efifwsetup
+ - efi_gop
+ - ls
+ - search
+ - search_label
+ - search_fs_uuid
+ - search_fs_file
+ - echo
+ - serial
+ - gfxmenu
+ - gfxterm
+ - gfxterm_background
+ - gfxterm_menu
+ - test
+ - loadenv
+ - all_video
+ - videoinfo
+ - png
+Adding additional modules:
+ - efi_uga
+'/nix/store/y5b7003yidg3aavnmaxj15xpb7ksx92x-refind-0.14.2/share/refind/refind_x64.efi' -> '/nix/store/36v9y5w4j5agygyy81rsa5f1v6m2f16c-efi-directory/EFI/BOOT/refind_x64.efi'
+building '/nix/store/bzkjnj5ms8lhjc54kpc7hfscjinw5fji-efi-image_eltorito.drv'...
+Usage size: 2097152
+Image size: 3145728
+mkfs.fat 4.2 (2021-01-31)
+Copying BOOTX64.EFI
+Copying grub.cfg
+Copying refind_x64.efi
+fsck.fat 4.2 (2021-01-31)
+Checking we can access the last sector of the filesystem
+Boot sector contents:
+System ID "mkfs.fat"
+Media byte 0xf8 (hard disk)
+       512 bytes per logical sector
+      2048 bytes per cluster
+         1 reserved sector
+First FAT starts at byte 512 (sector 1)
+         2 FATs, 12 bit entries
+      2560 bytes per FAT (= 5 sectors)
+Root directory starts at byte 5632 (sector 11)
+       512 root directory entries
+Data area starts at byte 22016 (sector 43)
+      1525 data clusters (3123200 bytes)
+32 sectors/track, 2 heads
+         0 hidden sectors
+      6144 sectors total
+Checking for unused clusters.
+/nix/store/5mg5mwkgvn3mvs30ifyfshgxibzw23r5-efi-image_eltorito: 6 files, 719/1525 clusters
+building '/nix/store/h16pniwj7mpl7c0xi6z31vl3zl427r3w-nixos-26.05pre-git-x86_64-linux.iso.drv'...
+structuredAttrs is enabled
+Parallel mksquashfs: Using 2 processors
+Creating 4.0 filesystem on nix-store.squashfs, block size 1048576.
+
+
+Exportable Squashfs 4.0 filesystem, gzip compressed, data block size 1048576
+        compressed data, compressed metadata, compressed fragments,
+        compressed xattrs, compressed ids
+        duplicates are removed
+Filesystem size 3961897.93 Kbytes (3869.04 Mbytes)
+        40.24% of uncompressed filesystem size (9846595.70 Kbytes)
+Inode table size 6047347 bytes (5905.61 Kbytes)
+        23.68% of uncompressed inode table size (25532500 bytes)
+Directory table size 5790881 bytes (5655.16 Kbytes)
+        36.37% of uncompressed directory table size (15923235 bytes)
+Number of duplicate files found 61706
+Number of inodes 583035
+Number of files 301085
+Number of fragments 3667
+Number of symbolic links 188433
+Number of device nodes 0
+Number of fifo nodes 0
+Number of socket nodes 0
+Number of directories 93517
+Number of hard-links 0
+Number of ids (unique uids + gids) 1
+Number of uids 1
+        root (0)
+Number of gids 1
+        root (0)
+xorriso 1.5.6 : RockRidge filesystem manipulator, libburnia project.
+
+xorriso : NOTE : Environment variable SOURCE_DATE_EPOCH encountered with value 315532800
+Drive current: -outdev 'stdio:/nix/store/hyasc1g5cdphzkqa604ckc298nn30ig0-nixos-26.05pre-git-x86_64-linux.iso/iso/nixos-26.05pre-git-x86_64-linux.iso'
+Media current: stdio file, overwriteable
+Media status : is blank
+Media summary: 0 sessions, 0 data blocks, 0 data,  757g free
+xorriso : WARNING : -volid text does not comply to ISO 9660 / ECMA 119 rules
+xorriso : UPDATE :     194 files added in 1 seconds
+Added 12 items from file 'pathlist'
+xorriso : UPDATE :     194 files added in 1 seconds
+xorriso : NOTE : Copying to System Area: 432 bytes from file '/nix/store/q786wfxhzaz94mp8644n6hg43lnp2lp8-syslinux-unstable-2019-02-07/share/syslinux/isohdpfx.bin'
+libisofs: NOTE : Automatically adjusted MBR geometry to 1022/246/32
+libisofs: NOTE : Aligned image size to cylinder size by 35 blocks
+xorriso : UPDATE :  1.59% done
+xorriso : UPDATE :  11.30% done
+xorriso : UPDATE :  19.16% done
+xorriso : UPDATE :  22.71% done, estimate finish Sun Sep 27 05:51:52 2026
+xorriso : UPDATE :  26.31% done, estimate finish Sun Sep 27 05:51:54 2026
+xorriso : UPDATE :  28.78% done, estimate finish Sun Sep 27 05:51:57 2026
+xorriso : UPDATE :  30.09% done, estimate finish Sun Sep 27 05:51:59 2026
+xorriso : UPDATE :  30.13% done, estimate finish Sun Sep 27 05:52:03 2026
+xorriso : UPDATE :  30.17% done, estimate finish Sun Sep 27 05:52:06 2026

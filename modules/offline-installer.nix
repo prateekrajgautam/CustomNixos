@@ -1,6 +1,11 @@
 { config, lib, pkgs, modulesPath, installedProfile, installedModuleFiles ? [ ], ... }:
 
 let
+  # `modulesPath` is <nixpkgs>/nixos/modules.  Keep the exact nixpkgs tree
+  # used to build the ISO reachable by the privileged installer instead of
+  # relying on /root/.nix-defexpr or the asynchronously-created root channel.
+  nixpkgsPath = builtins.dirOf (builtins.dirOf modulesPath);
+
   mkTargetSystem = bootModule:
     (import "${modulesPath}/../lib/eval-config.nix" {
       system = pkgs.stdenv.hostPlatform.system;
@@ -47,17 +52,12 @@ let
     # The installer must use only paths embedded in the ISO. If the closure is
     # incomplete, fail locally instead of silently downloading from a cache.
     #
-    # substituters="" + fallback=false only block fetching a pre-built binary.
-    # They do NOT stop Nix from deciding to *build* a missing derivation
-    # locally, and building always has network access to fetch that
-    # derivation's own source tarball (fixed-output derivations are exempt
-    # from the sandbox's network restriction). That is what let nixos-install
-    # cascade into recompiling gcc/binutils/bash/coreutils from source and
-    # fetching Perl build-tooling from CPAN/GNU mirrors. max-jobs=0 is the
-    # setting that actually forecloses that: it disables local building
-    # entirely, so a missing path fails immediately and by name instead of
-    # triggering a from-source rebuild of the world.
-    export NIX_CONFIG=$'substituters =\nconnect-timeout = 1\nfallback = false\nmax-jobs = 0'
+    # Calamares is later elevated with pkexec, which sanitizes this process's
+    # environment.  Setting NIX_PATH here still makes the live launcher and
+    # any non-elevated checks deterministic; the patched command below passes
+    # the same value explicitly through pkexec.
+    export NIX_PATH='nixpkgs=${nixpkgsPath}'
+    export NIX_CONFIG=$'substituters =\nconnect-timeout = 1\nfallback = false'
     exec ${pkgs.calamares-nixos}/bin/calamares "$@"
   '';
 in
@@ -83,8 +83,13 @@ in
 
           substituteInPlace $out/lib/calamares/modules/nixos/main.py \
             --replace-fail \
+              '            "nixos-install",' \
+              $'            "env",\n            "NIX_PATH=nixpkgs=${nixpkgsPath}",\n            "nixos-install",'
+
+          substituteInPlace $out/lib/calamares/modules/nixos/main.py \
+            --replace-fail \
               $'            "--root",\n            root_mount_point' \
-              $'            "--root",\n            root_mount_point,\n            # pkexec sanitizes NIX_CONFIG, so enforce offline behavior on the\n            # privileged nixos-install command itself. max-jobs=0 is the\n            # option that actually blocks local building of a missing\n            # derivation (substituters/fallback only block fetching a\n            # pre-built binary, not building-from-source, whose source\n            # fetch is unaffected by either of them).\n            "--option",\n            "substituters",\n            "",\n            "--option",\n            "fallback",\n            "false",\n            "--option",\n            "connect-timeout",\n            "1",\n            "--option",\n            "max-jobs",\n            "0"'
+              $'            "--root",\n            root_mount_point,\n            # Enforce offline behavior on the privileged command itself.\n            # Local builds must remain enabled: nixos-install has to assemble\n            # the final system for the choices made in Calamares, using the\n            # package closures already embedded in the ISO.\n            "--option",\n            "substituters",\n            "",\n            "--option",\n            "fallback",\n            "false",\n            "--option",\n            "connect-timeout",\n            "1"'
         '';
       });
     })
@@ -92,16 +97,17 @@ in
 
   # Keep complete BIOS and UEFI target closures on the ISO. The basic
   # no-desktop installation is a subset of these Cinnamon seed closures.
-  system.extraDependencies = [ efiTargetSystem biosTargetSystem ];
+  # Keep the source tree itself in the live-system closure too.  The patched
+  # Calamares command names this path at runtime, but an interpolated path in
+  # generated Python is not by itself a reliable closure edge.
+  system.extraDependencies = [ nixpkgsPath efiTargetSystem biosTargetSystem ];
 
   # Runtime defaults provide a second guard in addition to the launcher.
-  # max-jobs=0 is the setting that actually enforces "fail locally instead
-  # of building" — substituters/fallback alone only block fetching a
-  # pre-built binary, not a from-source build's own source-tarball fetch.
+  # Do not set max-jobs=0: installation needs to perform the final, local
+  # system assembly after Calamares has generated the machine-specific config.
   nix.settings.substituters = lib.mkForce [ ];
   nix.settings.connect-timeout = 1;
   nix.settings.fallback = false;
-  nix.settings.max-jobs = lib.mkForce 0;
 
   _module.args.offlineCalamares = offlineCalamares;
 }

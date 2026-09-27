@@ -1,0 +1,6 @@
+{
+  "channel": "nixos-26.05",
+  "rev": "5e2305d577ca00acbba631b05cb1094d172b29f3",
+  "url": "https://github.com/NixOS/nixpkgs/archive/5e2305d577ca00acbba631b05cb1094d172b29f3.tar.gz",
+  "sha256": "1f0gq1h64nq2ybi6v6p3n7rh4cd3qgkyyy7lm24sb4gxyl7w5qpx"
+}
